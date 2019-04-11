@@ -1,3 +1,55 @@
 <resources>
     <string name="app_name">Nihongo no Seito</string>
+    <string-array name="listaVocab">
+        <item>たべもの</item>
+        <item>ごはん</item>
+        <item>パン</item>
+        <item>シリアル</item>
+        <item>ジャム</item>
+        <item>バター</item>
+        <item>さかな</item>
+        <item>えび</item>
+        <item>かに</item>
+        <item>にく</item>
+        <item>ぎゅうにく</item>
+        <item>とりにく</item>
+        <item>たまご</item>
+        <item>チーズ</item>
+        <item>ヨーグルト</item>
+    </string-array>
+    <string-array name="listaVocabTraduz">
+        <item>Comida</item>
+        <item>Arroz</item>
+        <item>Pão</item>
+        <item>Cereal</item>
+        <item>Geleia</item>
+        <item>Manteiga</item>
+        <item>Peixe</item>
+        <item>Camarão</item>
+        <item>Caranguejo</item>
+        <item>Carne</item>
+        <item>Carne de vaca</item>
+        <item>Carne de frango</item>
+        <item>Ovo</item>
+        <item>Queijo</item>
+        <item>Iogurte</item>
+    </string-array>
+    <!--Adicionar strings com os nomes das imagens(sem o .xml,jpg,png)-->
+    <string-array name="vocabImgs">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
 </resources>
