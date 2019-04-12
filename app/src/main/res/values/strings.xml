@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">Nihongo no Seito</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_kanji">Tela Kanji</string>
+    <string name="nav_quiz">Tela Quiz</string>
+    <string name="action_settings">Settings</string>
+    <string name="nav_vocab">Tela Vocab</string>
+    <!-- TODO - substituir o texto depois de adicionar a nova logo-->
+    <string name="nav_header_desc">PlaceHolder do logo do app</string>
     <string-array name="listaVocab">
         <item>たべもの</item>
         <item>ごはん</item>
@@ -52,4 +60,7 @@
         <item></item>
         <item></item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
