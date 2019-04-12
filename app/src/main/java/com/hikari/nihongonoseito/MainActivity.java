@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
 
     NavigationView navigationView;
     Fragment mFrag;
-
+    int controleBtn=0;
     private  DrawerLayout drawer;
     private ActionBarDrawerToggle toggle;
 
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
 
 
     }
+
     @Override
     public void onStart(){
         super.onStart();
@@ -63,14 +64,26 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(idChecked);
+        mFrag= new Vocab_Fragment();
 
         changeFragment(idChecked);
 
     }
 
+    public void replaceFragmentWithAnimation(android.support.v4.app.Fragment fragment, String tag){
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.setCustomAnimations( R.animator.enter_from_left, R.animator.exit_to_right);
+
+        transaction.replace(R.id.frag_placeholder, fragment);
+        transaction.addToBackStack(tag);
+        transaction.commit();
+    }
+
     public void changeFragment(int checkedId){
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        removeFragment();
+        ft.setCustomAnimations(R.animator.enter_from_right, R.animator.exit_to_left);
+        ft.replace(R.id.frag_placeholder, mFrag);
+        ft.addToBackStack("test");
         switch(checkedId){
             case R.id.nav_vocab:
                 mFrag= new Vocab_Fragment();
@@ -85,6 +98,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                 ft.replace(R.id.frag_placeholder, mFrag);
                 break;
         }
+
         ft.commit();
     }
     public void removeFragment(){
@@ -123,14 +137,29 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
 
         switch(id){
             case R.id.nav_vocab:
-               changeFragment(id);
+                if(!(controleBtn==0)) {
+                    changeFragment(id);
+                    controleBtn=0;
+                }
                 break;
             case R.id.nav_kanji:
+                if(!(controleBtn==1)){
                 changeFragment(id);
+                    controleBtn=1;
+                }
                 break;
             case R.id.nav_quiz:
+
+                if(!(controleBtn==2)){
                 changeFragment(id);
+                    controleBtn=2;
+                }
                 break;
+            default:
+                changeFragment(R.id.nav_vocab);
+                controleBtn=0;
+                break;
+
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

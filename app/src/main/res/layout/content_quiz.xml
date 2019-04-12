@@ -7,72 +7,92 @@
     android:layout_height="match_parent">
 
     <android.support.v7.widget.CardView
-        android:id="@+id/quizBtn3"
-        android:layout_width="124dp"
-        android:layout_height="68dp"
+        android:id="@+id/quizBtn1"
+        android:layout_width="130dp"
+        android:layout_height="85dp"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="40dp"
-        android:text="Button"
-        app:cardCornerRadius="@dimen/nav_header_vertical_spacing"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quizBtn1" >
-
-        <TextView
-            android:id="@+id/quizTxt3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="opcao3" />
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/quizBtn2"
-        android:layout_width="124dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="Button"
         app:cardCornerRadius="@dimen/nav_header_vertical_spacing"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
-        app:layout_constraintStart_toEndOf="@+id/quizBtn1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" >
 
         <TextView
-            android:id="@+id/quizTxt2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="opcao2" />
+            android:text="Opcao 1"
+            android:textSize="18sp" />
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
         android:id="@+id/quizBtn4"
-        android:layout_width="124dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_width="130dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="32dp"
         android:foregroundGravity="center"
         android:text="Button"
         app:cardCornerRadius="@dimen/nav_header_vertical_spacing"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
-        app:layout_constraintStart_toEndOf="@+id/quizBtn1"
-        app:layout_constraintTop_toBottomOf="@+id/quizBtn2">
+        app:layout_constraintStart_toEndOf="@+id/quizBtn3"
+        app:layout_constraintTop_toBottomOf="@+id/quizBtn2" >
 
         <TextView
-            android:id="@+id/quizTxt4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="opcao4" />
+            android:text="Opcao 4"
+            android:textSize="18sp" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/quizBtn3"
+        android:layout_width="130dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Button"
+        app:cardCornerRadius="@dimen/nav_header_vertical_spacing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quizBtn1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Opcao 3"
+            android:textSize="18sp" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/quizBtn2"
+        android:layout_width="130dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="52dp"
+        android:text="Button"
+        app:cardCornerRadius="@dimen/nav_header_vertical_spacing"
+        app:layout_constraintStart_toEndOf="@+id/quizBtn1"
+        app:layout_constraintTop_toBottomOf="@+id/textView" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Opcao 2"
+            android:textSize="18sp" />
     </android.support.v7.widget.CardView>
 
     <TextView
@@ -87,7 +107,6 @@
         android:text="Imagem ou Texto"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -103,29 +122,9 @@
         android:text="Tela placeholder pro design"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/quizBtn1"
-        android:layout_width="124dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="52dp"
-        android:text="Button"
-        app:cardCornerRadius="@dimen/nav_header_vertical_spacing"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" >
-
-        <TextView
-            android:id="@+id/quizTxt1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="opcao1" />
-    </android.support.v7.widget.CardView>
 
     <ProgressBar
         android:id="@+id/progressBar"
