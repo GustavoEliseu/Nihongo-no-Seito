@@ -100,7 +100,7 @@ public class myRecyclerAd extends RecyclerView.Adapter<myRecyclerAd.ViewHolder> 
     }
 
     // allows clicks events to be caught
-    void setClickListener(ItemClickListener itemClickListener) {
+    public void setClickListener(ItemClickListener itemClickListener) {
         this.mClickListener = itemClickListener;
     }
 

@@ -7,11 +7,14 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
+        android:largeHeap="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SeccondScreen"
+            android:name=".SeccondActivity"
             android:label="@string/title_activity_seccond_screen"
+            android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".MainActivity">
             <meta-data

@@ -13,7 +13,11 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+        <item name="android:colorPrimary">#ffffff</item>
+        <item name="android:colorPrimaryDark">#0B84D5</item>
+        <item name="android:textColorPrimary">#0B84D5</item>
+    </style>
 
     <!-- Toolbar styles -->
     <style name="myToolBarStyle">@style/Widget.AppCompat.Toolbar

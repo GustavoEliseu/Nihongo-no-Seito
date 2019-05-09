@@ -7,53 +7,67 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.hikari.nihongonoseito.dummy.DummyContent;
 
-public class SeccondScreen extends AppCompatActivity implements KanaFragment.OnFragmentInteractionListener,
-        KanjiFragment.OnFragmentInteractionListener, Vocab_Fragment_BAK.OnFragmentInteractionListener, SobreFragment.OnFragmentInteractionListener,
-PerfilFragment.OnFragmentInteractionListener, FragmentVocab.OnListFragmentInteractionListener{
+public class SeccondActivity extends AppCompatActivity implements FragmentKana.OnFragmentInteractionListener,
+        FragmentKanji.OnFragmentInteractionListener,  FragmentSobre.OnFragmentInteractionListener,
+FragmentPerfil.OnFragmentInteractionListener, FragmentVocab.OnListFragmentInteractionListener {
     private TextView mTextMessage;
-
+    final Fragment fragmentSobre = new FragmentSobre();
+    final Fragment fragmentKana = new FragmentKana();
+    final Fragment fragmentKanji = new FragmentKanji();
+    final Fragment fragmentPerfil = new FragmentPerfil();
+    final Fragment fragmentVocab = new FragmentVocab();
     Fragment mFrag;
     BottomNavigationView navView;
+    int telaAtual;
+    RecyclerView.RecycledViewPool recycledViewPool;
+
 
     //Objetivo será controlar o OnBackPressed para retornar ou para tela anterior ou para um andar anterior do fragment
     private int degraisDeTela;
+    public RecyclerView.RecycledViewPool getSharedRecycledViewPool(){
+        return recycledViewPool;
+    }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seccond_screen);
+        setContentView(R.layout.activity_seccond);
         navView = findViewById(R.id.nav_view);
         mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         int opt =getIntent().getIntExtra("sentOpt",0);
+        recycledViewPool = new RecyclerView.RecycledViewPool();
+
 
         switch(opt){
             case 0:
                 navView.setSelectedItemId(R.id.nav_kana);
-                changeFragment(R.id.nav_kana);
+                telaAtual=1;
                 break;
             case 1:
                 navView.setSelectedItemId(R.id.nav_kanji);
-                changeFragment(R.id.nav_kanji);
+                telaAtual=2;
                 break;
             case 2:
                 navView.setSelectedItemId(R.id.nav_vocab);
-                changeFragment(R.id.nav_vocab);
+                telaAtual=3;
                 break;
             case 3:
                 navView.setSelectedItemId(R.id.nav_perfil);
-                changeFragment(R.id.nav_perfil);
+                telaAtual=4;
                 break;
             case 4:
                 changeFragment(4);
                 break;
         }
+
         degraisDeTela=0;
 
 
@@ -76,18 +90,22 @@ PerfilFragment.OnFragmentInteractionListener, FragmentVocab.OnListFragmentIntera
                     return true;
                 case R.id.nav_kana:
                     changeFragment(id);
+                    telaAtual=1;
                     degraisDeTela=0;
                     return true;
                 case R.id.nav_kanji:
                     changeFragment(id);
+                    telaAtual=2;
                     degraisDeTela=0;
                     return true;
                 case R.id.nav_vocab:
                     changeFragment(id);
+                    telaAtual=3;
                     degraisDeTela=0;
                     return true;
                 case R.id.nav_perfil:
                     changeFragment(id);
+                    telaAtual=4;
                     degraisDeTela=0;
                     return true;
             }
@@ -105,45 +123,42 @@ PerfilFragment.OnFragmentInteractionListener, FragmentVocab.OnListFragmentIntera
     }
 
     public void changeFragment(int checkedId){
-        FragmentTransaction ft =getSupportFragmentManager().beginTransaction();;
+        FragmentTransaction ft =getSupportFragmentManager().beginTransaction();
+        String tag ="";
         switch(checkedId){
             case 4:
-                mFrag= new SobreFragment();
+                mFrag= fragmentSobre;
+                tag= "Sobre";
                 break;
             case R.id.nav_vocab:
-                mFrag= new FragmentVocab();
+                mFrag= fragmentVocab;
+                tag= "Vocab";
                 break;
             case R.id.nav_kanji:
-                mFrag= new KanjiFragment();
+                mFrag= fragmentKanji;
+                tag= "Kanji";
                 break;
             case R.id.nav_kana:
-                mFrag= new KanaFragment();
+                mFrag= fragmentKana;
+                tag= "Kana";
                 break;
             case R.id.nav_perfil:
-                mFrag= new PerfilFragment();
+                mFrag= fragmentPerfil;
+                tag= "Perfil";
                 break;
         }
-        try{
-        ft.setCustomAnimations(R.animator.enter_from_right, R.animator.exit_to_left);
-        ft.replace(R.id.fragment_sec_screen, mFrag);
-        ft.addToBackStack("test");
-        }
-        catch (Exception E){
-            ft.add(R.id.fragment_sec_screen,mFrag);
-        }
+        mFrag.setRetainInstance(true);
 
-
-        ft.replace(R.id.fragment_sec_screen, mFrag);
+        ft.replace(R.id.fragment_sec_screen, mFrag,tag);
 
         ft.commit();
+        getSupportFragmentManager().executePendingTransactions();
     }
     public void removeFragment(){
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         if (mFrag != null) {
             ft.remove(mFrag);
             ft.commit();
-            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
-            mFrag = null;
         }
     }
 

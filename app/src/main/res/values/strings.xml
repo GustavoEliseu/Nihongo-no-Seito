@@ -6,6 +6,9 @@
     <string name="nav_quiz">Tela Quiz</string>
     <string name="action_settings">Settings</string>
     <string name="nav_vocab">Tela Vocab</string>
+    <string name="vocab_tela1">Comidas</string>
+    <string name="vocab_tela2">Bebidas</string>
+    <string name="vocab_tela3">Quiz</string>
     <!-- TODO - substituir o texto depois de adicionar a nova logo-->
     <string name="nav_header_desc">PlaceHolder do logo do app</string>
     <string-array name="listaVocab">
@@ -68,5 +71,6 @@
     <string name="title_kana">Kanas</string>
     <string name="title_kanji">Kanji</string>
     <string name="title_vocab">Vocabulário</string>
+    <string name="title_vocab_menor">Vocab</string>
     <string name="title_perfil">Perfil</string>
 </resources>
