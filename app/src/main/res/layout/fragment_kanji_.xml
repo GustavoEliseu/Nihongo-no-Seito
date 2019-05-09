@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Kanji_Fragment">
+    tools:context=".KanjiFragment">
 
     <include layout="@layout/content_kanji"></include>
 

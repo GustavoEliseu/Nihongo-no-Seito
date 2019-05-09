@@ -1,5 +1,6 @@
 package com.hikari.nihongonoseito;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,6 +11,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -19,14 +21,17 @@ import android.view.View;
 import android.widget.Toast;
 
 //TODO- IMPLEMENTAR DRAWER COMO FRAGMENT!
-public class MainActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener, Quiz_Fragment.OnFragmentInteractionListener,
-        Vocab_Fragment.OnFragmentInteractionListener,Kanji_Fragment.OnFragmentInteractionListener{
+public class MainActivity extends AppCompatActivity  implements View.OnClickListener{
 
-    NavigationView navigationView;
+        /*NavigationView.OnNavigationItemSelectedListener, QuizFragment.OnFragmentInteractionListener,
+        Vocab_Fragment_BAK.OnFragmentInteractionListener,KanjiFragment.OnFragmentInteractionListener{*/
+
+    /*NavigationView navigationView;
     Fragment mFrag;
     int controleBtn=0;
     private  DrawerLayout drawer;
-    private ActionBarDrawerToggle toggle;
+    private ActionBarDrawerToggle toggle;*/
+    CardView kana,kanji,vocab,perfil,sobre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,21 +39,22 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
 
 
         setContentView(R.layout.activity_main);
+        kana=findViewById(R.id.kana_card);
+        kanji=findViewById(R.id.kanji_card);
+        vocab=findViewById(R.id.vocab_card);
+        perfil=findViewById(R.id.profile_card);
+        sobre=findViewById(R.id.sobre_btn);
+        kana.setOnClickListener(this);
+        kanji.setOnClickListener(this);
+        vocab.setOnClickListener(this);
+        perfil.setOnClickListener(this);
+        sobre.setOnClickListener(this);
 
-
-        //definindo o Toolbar
+        /*//definindo o Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);*/
 
-        //Configuração do menu lateral e inicialização deste
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
-        toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-
-        toggle.syncState();
 
 
     }
@@ -60,17 +66,17 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
 
 
 
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        /*navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(idChecked);
-        mFrag= new Vocab_Fragment();
+       // mFrag= new Vocab_Fragment_BAK();*/
 
-        changeFragment(idChecked);
+        //changeFragment(idChecked);
 
     }
 
-    public void replaceFragmentWithAnimation(android.support.v4.app.Fragment fragment, String tag){
+    /*public void replaceFragmentWithAnimation(android.support.v4.app.Fragment fragment, String tag){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.setCustomAnimations( R.animator.enter_from_left, R.animator.exit_to_right);
 
@@ -86,15 +92,15 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         ft.addToBackStack("test");
         switch(checkedId){
             case R.id.nav_vocab:
-                mFrag= new Vocab_Fragment();
+                mFrag= new Vocab_Fragment_BAK();
                 ft.replace(R.id.frag_placeholder, mFrag);
                 break;
             case R.id.nav_kanji:
-                mFrag= new Kanji_Fragment();
+                mFrag= new KanjiFragment();
                 ft.replace(R.id.frag_placeholder, mFrag);
                 break;
             case R.id.nav_quiz:
-                mFrag= new Quiz_Fragment();
+                mFrag= new QuizFragment();
                 ft.replace(R.id.frag_placeholder, mFrag);
                 break;
         }
@@ -129,9 +135,9 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         } else {
             super.onBackPressed();
         }
-    }
+    }*/
 
-    @Override
+    /*@Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id =menuItem.getItemId();
 
@@ -166,9 +172,33 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         return true;
     }
 
+*/
+
 
     @Override
-    public void onFragmentInteraction(String tag, Object data) {
-
+    public void onClick(View v) {
+        Intent intent = new Intent(this,SeccondScreen.class);
+        switch(v.getId()){
+            case R.id.kana_card:
+                intent.putExtra("sentOpt",0);
+                startActivity(intent);
+                break;
+            case R.id.kanji_card:
+                intent.putExtra("sentOpt",1);
+                startActivity(intent);
+                break;
+            case R.id.vocab_card:
+                intent.putExtra("sentOpt",2);
+                startActivity(intent);
+                break;
+            case R.id.profile_card:
+                intent.putExtra("sentOpt",3);
+                startActivity(intent);
+                break;
+            case R.id.sobre_btn:
+                intent.putExtra("sentOpt",4);
+                startActivity(intent);
+                break;
+        }
     }
 }

@@ -3,6 +3,7 @@ package com.hikari.nihongonoseito;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,9 +37,9 @@ public class myRecyclerAd extends RecyclerView.Adapter<myRecyclerAd.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         viewHolder.mTitleView.setText(mData[i]);
         viewHolder.vocabTraduz.setText(mDataTrad[i]);
-        //viewHolder.imageVocab.setImageDrawable( context.getResources().getDrawable(context.getResources().getIdentifier(mvVocabsImg[i], "drawable", context.getPackageName())));
-        viewHolder.imageVocab.setImageDrawable(context.getResources().getDrawable(R.drawable.food_placeholder));
-        viewHolder.imageMarcarVocab.setImageDrawable(context.getResources().getDrawable(R.drawable.btn_cancelar_placeholder));
+        viewHolder.imageVocab.setImageDrawable( context.getResources().getDrawable(context.getResources().getIdentifier(mvVocabsImg[i], "drawable", context.getPackageName())));
+        //viewHolder.imageVocab.setImageDrawable(context.getResources().getDrawable(R.drawable.carne_img));
+        viewHolder.imageMarcarVocab.setImageDrawable(context.getResources().getDrawable(R.drawable.ver_img));
 
     }
 

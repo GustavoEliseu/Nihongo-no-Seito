@@ -4,33 +4,32 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Quiz_Fragment.OnFragmentInteractionListener} interface
+ * {@link KanjiFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Quiz_Fragment#newInstance} factory method to
+ * Use the {@link KanjiFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Quiz_Fragment extends Fragment implements View.OnClickListener{
+public class KanjiFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
-    private CardView c1,c2,c3,c4;
+    private String mParam1;
+    private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
-    public Quiz_Fragment() {
+    public KanjiFragment() {
         // Required empty public constructor
     }
 
@@ -40,11 +39,11 @@ public class Quiz_Fragment extends Fragment implements View.OnClickListener{
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Quiz_Fragment.
+     * @return A new instance of fragment KanjiFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static Quiz_Fragment newInstance(String param1, String param2) {
-        Quiz_Fragment fragment = new Quiz_Fragment();
+    public static KanjiFragment newInstance(String param1, String param2) {
+        KanjiFragment fragment = new KanjiFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -59,23 +58,13 @@ public class Quiz_Fragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =inflater.inflate(R.layout.fragment_quiz_, container, false);
-        c1= v.findViewById(R.id.quizBtn1);
-        c2= v.findViewById(R.id.quizBtn2);
-        c3= v.findViewById(R.id.quizBtn3);
-        c4= v.findViewById(R.id.quizBtn4);
-        c1.setOnClickListener(this);
-        c2.setOnClickListener(this);
-        c3.setOnClickListener(this);
-        c4.setOnClickListener(this);
-
-        return v;
+        return inflater.inflate(R.layout.fragment_kanji_, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction("teste",uri);
+            mListener.onFragmentInteraction("teste2",uri);
         }
     }
 
@@ -96,27 +85,6 @@ public class Quiz_Fragment extends Fragment implements View.OnClickListener{
         mListener = null;
     }
 
-    @Override
-    public void onClick(View v) {
-        switch(v.getId()){
-            case R.id.quizBtn1:
-                Toast.makeText(getContext(),"option1",Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.quizBtn2:
-                Toast.makeText(getContext(),"option2",Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.quizBtn3:
-                Toast.makeText(getContext(),"option3",Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.quizBtn4:
-                Toast.makeText(getContext(),"option4",Toast.LENGTH_SHORT).show();
-                break;
-            default:
-                Toast.makeText(getContext(),"Nenhuma opção detecetada!",Toast.LENGTH_SHORT).show();
-                break;
-        }
-    }
-
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -130,6 +98,5 @@ public class Quiz_Fragment extends Fragment implements View.OnClickListener{
     public interface OnFragmentInteractionListener<T> {
         // TODO: Update argument type and name
         void onFragmentInteraction(String tag, T data);
-
     }
 }

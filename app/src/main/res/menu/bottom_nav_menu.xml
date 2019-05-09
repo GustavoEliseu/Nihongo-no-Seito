@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home_img"
+        android:checkable="false"
+        android:checked="false"
+        android:title="@string/title_home"/>
+
+    <item
+        android:id="@+id/nav_kana"
+        android:icon="@drawable/kana_logo"
+        android:title="@string/title_kana"/>
+
+    <item
+        android:id="@+id/nav_kanji"
+        android:icon="@drawable/curico"
+        android:title="@string/title_kanji"/>
+    <item
+        android:id="@+id/nav_vocab"
+        android:icon="@drawable/vocab_logo"
+        android:title="@string/title_vocab"/>
+
+    <item
+        android:id="@+id/nav_perfil"
+        android:icon="@drawable/shape_1"
+        android:title="@string/title_perfil"/>
+
+
+</menu>

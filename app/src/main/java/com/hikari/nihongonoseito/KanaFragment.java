@@ -4,35 +4,32 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Vocab_Fragment.OnFragmentInteractionListener} interface
+ * {@link KanaFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Vocab_Fragment#newInstance} factory method to
+ * Use the {@link KanaFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Vocab_Fragment extends Fragment implements myRecyclerAd.ItemClickListener{
+public class KanaFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    myRecyclerAd mRecyclerAd;
-    RecyclerView mRecycler;
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
-
+    private String mParam1;
+    private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
-    public Vocab_Fragment() {
+    public KanaFragment() {
         // Required empty public constructor
     }
 
@@ -42,12 +39,14 @@ public class Vocab_Fragment extends Fragment implements myRecyclerAd.ItemClickLi
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Vocab_Fragment.
+     * @return A new instance of fragment KanaFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static Vocab_Fragment newInstance(String param1, String param2) {
-        Vocab_Fragment fragment = new Vocab_Fragment();
+    public static KanaFragment newInstance(String param1, String param2) {
+        KanaFragment fragment = new KanaFragment();
         Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -56,6 +55,8 @@ public class Vocab_Fragment extends Fragment implements myRecyclerAd.ItemClickLi
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
@@ -63,22 +64,13 @@ public class Vocab_Fragment extends Fragment implements myRecyclerAd.ItemClickLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v=inflater.inflate(R.layout.fragment_vocab_, container, false);
-
-
-        //Definindo o recyclerview
-        mRecycler= v.findViewById(R.id.myRecycler);
-        mRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        mRecyclerAd = new myRecyclerAd(getContext(),getResources().getStringArray(R.array.listaVocab),getResources().getStringArray(R.array.vocabImgs),getResources().getStringArray(R.array.listaVocabTraduz));
-        mRecyclerAd.setClickListener(this);
-        mRecycler.setAdapter(mRecyclerAd);
-        return v;
+        return inflater.inflate(R.layout.fragment_kana, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction("teste3",uri);
+            mListener.onFragmentInteraction(uri);
         }
     }
 
@@ -91,15 +83,6 @@ public class Vocab_Fragment extends Fragment implements myRecyclerAd.ItemClickLi
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
-    }
-
-    @Override
-    public void onItemClick(View view, int position, Boolean tipo) {
-        String teste = "";
-        if(tipo == true) teste = "botao pequeno "+ position;
-        else teste = "vocab na posicao "+ position;
-        Log.v("TAGClicked","meu numero foi"+ position);
-        Toast.makeText(getContext(),teste,Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -118,8 +101,8 @@ public class Vocab_Fragment extends Fragment implements myRecyclerAd.ItemClickLi
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface OnFragmentInteractionListener<T> {
+    public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(String tag, T data);
+        void onFragmentInteraction(Uri uri);
     }
 }

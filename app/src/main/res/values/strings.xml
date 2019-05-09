@@ -44,23 +44,29 @@
     </string-array>
     <!--Adicionar strings com os nomes das imagens(sem o .xml,jpg,png)-->
     <string-array name="vocabImgs">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>camarao_img</item>
+        <item>carne_img</item>
+        <item>frango_img</item>
+        <item>ovo_img</item>
+        <item>camarao_img</item>
+        <item>carne_img</item>
+        <item>frango_img</item>
+        <item>ovo_img</item>
+        <item>camarao_img</item>
+        <item>carne_img</item>
+        <item>frango_img</item>
+        <item>ovo_img</item>
+        <item>camarao_img</item>
+        <item>carne_img</item>
+        <item>frango_img</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_seccond_screen">SeccondScreen</string>
+    <string name="title_home">Home</string>
+    <string name="title_kana">Kanas</string>
+    <string name="title_kanji">Kanji</string>
+    <string name="title_vocab">Vocabulário</string>
+    <string name="title_perfil">Perfil</string>
 </resources>
