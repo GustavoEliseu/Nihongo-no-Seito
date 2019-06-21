@@ -12,10 +12,10 @@
         android:title="@string/title_kana"/>
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/home_img"
+        android:icon="@drawable/decision_t"
         android:checkable="false"
         android:checked="false"
-        android:title="@string/title_home"/>
+        android:title="@string/quiz"/>
 
     <item
         android:id="@+id/nav_kanji"

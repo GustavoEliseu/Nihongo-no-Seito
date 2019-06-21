@@ -16,7 +16,7 @@ import com.hikari.nihongonoseito.R;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.vocab_tela1,R.string.vocab_tela2,R.string.vocab_tela3};
+    private static final int[] TAB_TITLES = new int[]{R.string.vocab_tela1,R.string.vocab_tela2};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {

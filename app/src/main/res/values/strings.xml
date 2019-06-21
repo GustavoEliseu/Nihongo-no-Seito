@@ -8,7 +8,6 @@
     <string name="nav_vocab">Tela Vocab</string>
     <string name="vocab_tela1">Comidas</string>
     <string name="vocab_tela2">Bebidas</string>
-    <string name="vocab_tela3">Quiz</string>
     <!-- TODO - substituir o texto depois de adicionar a nova logo-->
     <string name="nav_header_desc">PlaceHolder do logo do app</string>
 
@@ -24,4 +23,5 @@
     <string name="imgDescricao">Imagem do hiragana</string>
     <string name="katakana">Katakana</string>
     <string name="hiragana">Hiragana</string>
+    <string name="quiz">Quiz</string>
 </resources>

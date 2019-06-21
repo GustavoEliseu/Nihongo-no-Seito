@@ -350,113 +350,42 @@ class DBHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) : S
         return myInt
     }
 
+    fun selectAllKana(isHiragana: Boolean): Cursor?{
+        val db = this.readableDatabase
+        val hiraKata = if(isHiragana) TABLE_HIRAGANA else TABLE_KATAKANA
+        return db.rawQuery("SELECT * FROM $hiraKata", null)
+    }
 
-//    fun startAlunoNota(db: SQLiteDatabase){
-//        val mArrayNome= context.resources.getStringArray(R.array.alunos_nomes)
-//        val mArrayData= context.resources.getStringArray(R.array.alunos_datas)
-//        val mArrayMateria= context.resources.getStringArray(R.array.notas_materia)
-//
-//        for(x in 0 until mArrayNome.size){
-//            val aluno: Aluno =
-//                    Aluno(mArrayNome[x], mArrayData[x], x)
-//            //checa se o usuário foi adicionado corretamente e adiciona as respectivas ntoas dele
-//            if(addAluno(aluno,db)>-1L){
-//                for (y in 0 until mArrayMateria.size){
-//                    addNota(
-//                            Nota(
-//                                    aluno,
-//                                    mArrayMateria[y],
-//                                    (0..10).random().toInt()
-//                            ),db)
-//                }
-//            }
-//        }
-//    }
+    fun selectAllKanji(): Cursor?{
+        val db = this.readableDatabase
+        return db.rawQuery("SELECT * FROM $TABLE_KANJI", null)
+    }
 
-/* private val CREATE_TABLE_KANJI =
-         "CREATE TABLE IF NOT EXISTS $TABLE_ALUNOS ($COLUNA_MATRICULA INTEGER PRIMARY KEY AUTOINCREMENT, $COLUNA_NOME TEXT NOT NULL, $COLUNA_DATA TEXT , UNIQUE ($COLUNA_NOME , $COLUNA_DATA));"
- private val CREATE_TABLE_KANAS =
-         "CREATE TABLE IF NOT EXISTS $TABLE_NOTAS ($COLUNA_MATRICULA INTEGER , $COLUNA_NOTA INTEGER CHECK ($COLUNA_NOTA >= 0 AND $COLUNA_NOTA <11), $COLUNA_MATERIA TEXT NOT NULL);"
- private val CREATE_TABLE_VOCAB =
-         "CREATE TABLE IF NOT EXISTS $TABLE_NOTAS ($COLUNA_MATRICULA INTEGER , $COLUNA_NOTA INTEGER CHECK ($COLUNA_NOTA >= 0 AND $COLUNA_NOTA <11), $COLUNA_MATERIA TEXT NOT NULL);"
+    fun selectAllVocab(): Cursor?{
+        val db = this.readableDatabase
+        return db.rawQuery("SELECT * FROM $TABLE_VOCAB", null)
+    }
+
+    fun selectKana(isHiragana: Boolean, id:Int): Cursor?{
+        val db = this.readableDatabase
+        val hiraKata = if(isHiragana) TABLE_HIRAGANA else TABLE_KATAKANA
+        return db.rawQuery("SELECT * FROM $hiraKata WHERE $COLUNA_ID = $id", null)
+    }
+
+    fun selectKanji(id:Int): Cursor?{
+        val db = this.readableDatabase
+        return db.rawQuery("SELECT * FROM $TABLE_KANJI WHERE $COLUNA_ID = $id", null)
+    }
+
+    fun selectVocab(id:Int): Cursor?{
+        val db = this.readableDatabase
+        return db.rawQuery("SELECT * FROM $TABLE_VOCAB WHERE $COLUNA_ID = $id", null)
+    }
 
 
 
- override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+/*
 
-     onCreate(db)
- }
-
- //FUNÇÃO TESTE - para adicionar os alunos e as notas disponibilizadas nos string-arrays no string.xml
- fun startAlunoNota(db: SQLiteDatabase){
-     val mArrayNome= context.resources.getStringArray(R.array.alunos_nomes)
-     val mArrayData= context.resources.getStringArray(R.array.alunos_datas)
-     val mArrayMateria= context.resources.getStringArray(R.array.notas_materia)
-
-     for(x in 0 until mArrayNome.size){
-         val aluno: Aluno =
-                 Aluno(mArrayNome[x], mArrayData[x], x)
-         //checa se o usuário foi adicionado corretamente e adiciona as respectivas ntoas dele
-         if(addAluno(aluno,db)>-1L){
-             for (y in 0 until mArrayMateria.size){
-                 addNota(
-                         Nota(
-                                 aluno,
-                                 mArrayMateria[y],
-                                 (0..10).random().toInt()
-                         ),db)
-             }
-         }
-     }
- }
-
- //FUNÇÃO TESTE- para adicionar alunos do onCreateDatabase
- fun addAluno(aluno: Aluno, db: SQLiteDatabase):Long {
-     val values = ContentValues()
-     values.put(COLUNA_NOME, aluno.nome)
-     values.put(COLUNA_DATA, aluno.data)
-     var myLong: Long
-     try {
-         myLong= db.insertOrThrow(TABLE_ALUNOS, null, values)
-         //precaução para caso de algum erro
-     }catch(t:Throwable){
-         t.printStackTrace()
-         myLong=-1
-     }
-     return myLong
- }
-
- //Função para se adicionar um aluno ao banco de dados
- fun addAluno(aluno: Aluno):Long {
-     val values = ContentValues()
-     values.put(COLUNA_NOME, aluno.nome)
-     values.put(COLUNA_DATA, aluno.data)
-     var myLong: Long
-     val db = this.writableDatabase
-     try {
-         myLong= db.insertOrThrow(TABLE_ALUNOS, null, values)
-         //precaução para caso de algum erro
-     }catch(t:Throwable){
-         t.printStackTrace()
-         myLong=-1
-     }
-     db.close()
-     return myLong
- }
-
- fun updateAluno(nome:String,data:String, matricula:Int):Boolean{
-     val db = this.writableDatabase
-     val cv:ContentValues = ContentValues()
-     cv.put(COLUNA_NOME,nome)
-     cv.put(COLUNA_DATA,data)
-     var result: Boolean
-     try{
-         result =db.update(TABLE_ALUNOS,cv, COLUNA_MATRICULA+" = ? ",arrayOf(matricula.toString()))>0
-     }catch(e:Exception){
-         result = false
-     }
-     return result
- }
 
  //Seleciona o ultimo AUTOINCREMENT adicionado na tabela Alunos
  fun getLastInsert():Cursor?{

@@ -26,7 +26,7 @@ public class SeccondActivity extends AbstractActivity implements KanaFragment.On
         FragmentKanji.OnFragmentInteractionListener,  FragmentSobre.OnFragmentInteractionListener,
 FragmentPerfil.OnFragmentInteractionListener, FragmentVocab.OnListFragmentInteractionListener,FragmentQuiz.OnFragmentInteractionListener {
     private TextView mTextMessage;
-    final Fragment fragmentSobre = new FragmentSobre();
+    final Fragment fragmentQuiz = new FragmentQuiz();
     final Fragment fragmentKana = new KanaFragment();
     final Fragment fragmentKanji = new FragmentKanji();
     final Fragment fragmentPerfil = new FragmentPerfil();
@@ -144,8 +144,8 @@ FragmentPerfil.OnFragmentInteractionListener, FragmentVocab.OnListFragmentIntera
         String tag ="";
         switch(checkedId){
             case 4:
-                mFrag= fragmentSobre;
-                tag= "Sobre";
+                mFrag= fragmentQuiz;
+                tag= "Quiz";
                 break;
             case R.id.nav_vocab:
                 mFrag= fragmentVocab;

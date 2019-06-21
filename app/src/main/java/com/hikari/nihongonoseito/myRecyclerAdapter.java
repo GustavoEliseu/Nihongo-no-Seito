@@ -67,7 +67,6 @@ public class myRecyclerAdapter extends RecyclerView.Adapter<myRecyclerAdapter.Vi
             definirCor(controleCor);
             v.setOnClickListener(this);
             imageMarcarVocab.setOnClickListener(this);
-
         }
 
         public void inverteCor(){
