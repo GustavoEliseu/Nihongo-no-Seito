@@ -7,4 +7,6 @@
     <color name="text_color_black">#828D99</color>
     <color name="CinzaBackground">#B4B4B4</color>
     <color name="branco">#FFFFFF</color>
+    <color name="itemBackground">#DEDFE0</color>
+    <color name="fontColor">#231f20</color>
 </resources>

@@ -2,23 +2,27 @@ package com.hikari.nihongonoseito;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.hikari.nihongonoseito.dummy.DummyContent;
+import com.hikari.nihongonoseito.Kana.KanaFragment;
+import com.hikari.nihongonoseito.dataclass.Kana;
 
-public class SeccondActivity extends AppCompatActivity implements FragmentKana.OnFragmentInteractionListener,
+import org.jetbrains.annotations.Nullable;
+
+
+public class SeccondActivity extends AbstractActivity implements KanaFragment.OnListFragmentInteractionListener,
         FragmentKanji.OnFragmentInteractionListener,  FragmentSobre.OnFragmentInteractionListener,
 FragmentPerfil.OnFragmentInteractionListener, FragmentVocab.OnListFragmentInteractionListener {
     private TextView mTextMessage;
     final Fragment fragmentSobre = new FragmentSobre();
-    final Fragment fragmentKana = new FragmentKana();
+    final Fragment fragmentKana = new KanaFragment();
     final Fragment fragmentKanji = new FragmentKanji();
     final Fragment fragmentPerfil = new FragmentPerfil();
     final Fragment fragmentVocab = new FragmentVocab();
@@ -65,6 +69,7 @@ FragmentPerfil.OnFragmentInteractionListener, FragmentVocab.OnListFragmentIntera
                 break;
             case 4:
                 changeFragment(4);
+                telaAtual=0;
                 break;
         }
 
@@ -78,6 +83,10 @@ FragmentPerfil.OnFragmentInteractionListener, FragmentVocab.OnListFragmentIntera
         super.onStart();
     }
 
+    public void firstInit(){
+
+    }
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -86,7 +95,9 @@ FragmentPerfil.OnFragmentInteractionListener, FragmentVocab.OnListFragmentIntera
             int id =item.getItemId();
             switch (id) {
                 case R.id.nav_home:
-                    finish();
+                    changeFragment(4);
+                    telaAtual=0;
+                    degraisDeTela=0;
                     return true;
                 case R.id.nav_kana:
                     changeFragment(id);
@@ -173,7 +184,12 @@ FragmentPerfil.OnFragmentInteractionListener, FragmentVocab.OnListFragmentIntera
     }
 
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+    public void onListFragmentInteraction() {
+
+    }
+
+    @Override
+    public void onListFragmentInteraction(@Nullable Kana item) {
 
     }
 }

@@ -11,58 +11,6 @@
     <string name="vocab_tela3">Quiz</string>
     <!-- TODO - substituir o texto depois de adicionar a nova logo-->
     <string name="nav_header_desc">PlaceHolder do logo do app</string>
-    <string-array name="listaVocab">
-        <item>たべもの</item>
-        <item>ごはん</item>
-        <item>パン</item>
-        <item>シリアル</item>
-        <item>ジャム</item>
-        <item>バター</item>
-        <item>さかな</item>
-        <item>えび</item>
-        <item>かに</item>
-        <item>にく</item>
-        <item>ぎゅうにく</item>
-        <item>とりにく</item>
-        <item>たまご</item>
-        <item>チーズ</item>
-        <item>ヨーグルト</item>
-    </string-array>
-    <string-array name="listaVocabTraduz">
-        <item>Comida</item>
-        <item>Arroz</item>
-        <item>Pão</item>
-        <item>Cereal</item>
-        <item>Geleia</item>
-        <item>Manteiga</item>
-        <item>Peixe</item>
-        <item>Camarão</item>
-        <item>Caranguejo</item>
-        <item>Carne</item>
-        <item>Carne de vaca</item>
-        <item>Carne de frango</item>
-        <item>Ovo</item>
-        <item>Queijo</item>
-        <item>Iogurte</item>
-    </string-array>
-    <!--Adicionar strings com os nomes das imagens(sem o .xml,jpg,png)-->
-    <string-array name="vocabImgs">
-        <item>camarao_img</item>
-        <item>carne_img</item>
-        <item>frango_img</item>
-        <item>ovo_img</item>
-        <item>camarao_img</item>
-        <item>carne_img</item>
-        <item>frango_img</item>
-        <item>ovo_img</item>
-        <item>camarao_img</item>
-        <item>carne_img</item>
-        <item>frango_img</item>
-        <item>ovo_img</item>
-        <item>camarao_img</item>
-        <item>carne_img</item>
-        <item>frango_img</item>
-    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -73,4 +21,7 @@
     <string name="title_vocab">Vocabulário</string>
     <string name="title_vocab_menor">Vocab</string>
     <string name="title_perfil">Perfil</string>
+    <string name="imgDescricao">Imagem do hiragana</string>
+    <string name="katakana">Katakana</string>
+    <string name="hiragana">Hiragana</string>
 </resources>

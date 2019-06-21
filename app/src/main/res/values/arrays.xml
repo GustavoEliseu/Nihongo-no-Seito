@@ -1,0 +1,1378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--ARRAYS KANA-->
+    <string-array name="hira_text">
+        <item>あ</item>
+        <item>い</item>
+        <item>う</item>
+        <item>え</item>
+        <item>お</item>
+        <item>か</item>
+        <item>き</item>
+        <item>く</item>
+        <item>け</item>
+        <item>こ</item>
+        <item>さ</item>
+        <item>し</item>
+        <item>す</item>
+        <item>せ</item>
+        <item>そ</item>
+        <item>た</item>
+        <item>ち</item>
+        <item>つ</item>
+        <item>て</item>
+        <item>と</item>
+        <item>な</item>
+        <item>に</item>
+        <item>ぬ</item>
+        <item>ね</item>
+        <item>の</item>
+        <item>は</item>
+        <item>ひ</item>
+        <item>ふ</item>
+        <item>へ</item>
+        <item>ほ</item>
+        <item>ま</item>
+        <item>み</item>
+        <item>む</item>
+        <item>め</item>
+        <item>も</item>
+        <item>や</item>
+        <item>*</item>
+        <item>ゆ</item>
+        <item>*</item>
+        <item>よ</item>
+        <item>ら</item>
+        <item>り</item>
+        <item>る</item>
+        <item>れ</item>
+        <item>ろ</item>
+        <item>わ</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>を</item>
+        <item>ん</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>が</item>
+        <item>ぎ</item>
+        <item>ぐ</item>
+        <item>げ</item>
+        <item>ご</item>
+        <item>ざ</item>
+        <item>じ</item>
+        <item>ず</item>
+        <item>ぜ</item>
+        <item>ぞ</item>
+        <item>だ</item>
+        <item>ぢ</item>
+        <item>づ</item>
+        <item>で</item>
+        <item>ど</item>
+        <item>ば</item>
+        <item>び</item>
+        <item>ぶ</item>
+        <item>べ</item>
+        <item>ぼ</item>
+        <item>ぱ</item>
+        <item>ぴ</item>
+        <item>ぷ</item>
+        <item>ぺ</item>
+        <item>ぽ</item>
+        <item>きゃ</item>
+        <item>きゅ</item>
+        <item>きょ</item>
+        <item>ぎゃ</item>
+        <item>ぎゅ</item>
+        <item>ぎょ</item>
+        <item>しゃ</item>
+        <item>しゅ</item>
+        <item>しょ</item>
+        <item>じゃ</item>
+        <item>じゅ</item>
+        <item>じょ</item>
+        <item>ちゃ</item>
+        <item>ちゅ</item>
+        <item>ちょ</item>
+        <item>ぢゃ</item>
+        <item>ぢゅ</item>
+        <item>ぢょ</item>
+        <item>にゃ</item>
+        <item>にゅ</item>
+        <item>にょ</item>
+        <item>ひゃ</item>
+        <item>ひゅ</item>
+        <item>ひょ</item>
+        <item>びゃ</item>
+        <item>びゅ</item>
+        <item>びょ</item>
+    </string-array>
+
+
+    <string-array name="kana_roma">
+        <item>a</item>
+        <item>i</item>
+        <item>u</item>
+        <item>e</item>
+        <item>o</item>
+        <item>ka</item>
+        <item>ki</item>
+        <item>ku</item>
+        <item>ke</item>
+        <item>ko</item>
+        <item>sa</item>
+        <item>shi</item>
+        <item>su</item>
+        <item>se</item>
+        <item>so</item>
+        <item>ta</item>
+        <item>chi</item>
+        <item>tsu</item>
+        <item>te</item>
+        <item>to</item>
+        <item>na</item>
+        <item>ni</item>
+        <item>nu</item>
+        <item>ne</item>
+        <item>no</item>
+        <item>ha</item>
+        <item>hi</item>
+        <item>fu</item>
+        <item>he</item>
+        <item>ho</item>
+        <item>ma</item>
+        <item>mi</item>
+        <item>mu</item>
+        <item>me</item>
+        <item>mo</item>
+        <item>ya</item>
+        <item>*</item>
+        <item>yu</item>
+        <item>*</item>
+        <item>yo</item>
+        <item>ra</item>
+        <item>ri</item>
+        <item>ru</item>
+        <item>re</item>
+        <item>ro</item>
+        <item>wa</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>wo</item>
+        <item>n</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>ga</item>
+        <item>gi</item>
+        <item>gu</item>
+        <item>ge</item>
+        <item>go</item>
+        <item>za</item>
+        <item>ji</item>
+        <item>zu</item>
+        <item>ze</item>
+        <item>zo</item>
+        <item>da</item>
+        <item>ji</item>
+        <item>zu</item>
+        <item>de</item>
+        <item>do</item>
+        <item>ba</item>
+        <item>bi</item>
+        <item>bu</item>
+        <item>be</item>
+        <item>bo</item>
+        <item>pa</item>
+        <item>pi</item>
+        <item>pu</item>
+        <item>pe</item>
+        <item>po</item>
+        <item>kya</item>
+        <item>kyu</item>
+        <item>kyo</item>
+        <item>gya</item>
+        <item>gyu</item>
+        <item>gyo</item>
+        <item>sha</item>
+        <item>shu</item>
+        <item>sho</item>
+        <item>jya</item>
+        <item>jyu</item>
+        <item>jyo</item>
+        <item>cha</item>
+        <item>chu</item>
+        <item>cho</item>
+        <item>ja</item>
+        <item>ju</item>
+        <item>jo</item>
+        <item>nya</item>
+        <item>nyu</item>
+        <item>nyo</item>
+        <item>hya</item>
+        <item>hyu</item>
+        <item>hyo</item>
+        <item>bya</item>
+        <item>byu</item>
+        <item>byo</item>
+
+    </string-array>
+
+
+    <string-array name="hira_img">
+        <item>h_01_a</item>
+        <item>h_02_i</item>
+        <item>h_03_u</item>
+        <item>h_04_e</item>
+        <item>h_05_o</item>
+        <item>h_06_ka</item>
+        <item>h_07_ki</item>
+        <item>h_08_ku</item>
+        <item>h_09_ke</item>
+        <item>h_10_ko</item>
+        <item>h_11_sa</item>
+        <item>h_12_shi</item>
+        <item>h_13_su</item>
+        <item>h_14_se</item>
+        <item>h_15_so</item>
+        <item>h_16_ta</item>
+        <item>h_17_chi</item>
+        <item>h_18_tsu</item>
+        <item>h_19_te</item>
+        <item>h_20_to</item>
+        <item>h_21_na</item>
+        <item>h_22_ni</item>
+        <item>h_24_nu</item>
+        <item>h_23_ne</item>
+        <item>h_25_no</item>
+        <item>h_26_ha</item>
+        <item>h_27_hi</item>
+        <item>h_28_fu</item>
+        <item>h_29_he</item>
+        <item>h_30_ho</item>
+        <item>h_31_ma</item>
+        <item>h_32_mi</item>
+        <item>h_33_mu</item>
+        <item>h_34_me</item>
+        <item>h_35_mo</item>
+        <item>h_36_ya</item>
+        <item>*</item>
+        <item>h_37_yu</item>
+        <item>*</item>
+        <item>h_38_yo</item>
+        <item>h_39_ra</item>
+        <item>h_40_ri</item>
+        <item>h_41_ru</item>
+        <item>h_42_re</item>
+        <item>h_43_ro</item>
+        <item>h_44_wa</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>h_45_wo</item>
+        <item>h_46_n</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>h_47_ga</item>
+        <item>h_48_gi</item>
+        <item>h_49_gu</item>
+        <item>h_50_ge</item>
+        <item>h_51_go</item>
+        <item>h_52_za</item>
+        <item>h_53_ji</item>
+        <item>h_54_zu</item>
+        <item>h_55_ze</item>
+        <item>h_56_zo</item>
+        <item>h_57_da</item>
+        <item>h_58_ji</item>
+        <item>h_59_zu</item>
+        <item>h_60_de</item>
+        <item>h_61_do</item>
+        <item>h_62_ba</item>
+        <item>h_63_bi</item>
+        <item>h_64_bu</item>
+        <item>h_65_be</item>
+        <item>h_66_bo</item>
+        <item>h_67_pa</item>
+        <item>h_68_pi</item>
+        <item>h_69_pu</item>
+        <item>h_70_pe</item>
+        <item>h_71_po</item>
+        <item>j_01</item>
+        <item>j_02</item>
+        <item>j_03</item>
+        <item>j_04</item>
+        <item>j_05</item>
+        <item>j_06</item>
+        <item>j_07</item>
+        <item>j_08</item>
+        <item>j_09</item>
+        <item>j_10</item>
+        <item>j_11</item>
+        <item>j_12</item>
+        <item>j_13</item>
+        <item>j_14</item>
+        <item>j_15</item>
+        <item>j_16</item>
+        <item>j_17</item>
+        <item>j_18</item>
+        <item>j_19</item>
+        <item>j_20</item>
+        <item>j_21</item>
+        <item>j_22</item>
+        <item>j_23</item>
+        <item>j_24</item>
+        <item>j_25</item>
+        <item>j_26</item>
+        <item>j_27</item>
+    </string-array>
+
+
+    <string-array name="kata_text">
+        <item>ア</item>
+        <item>イ</item>
+        <item>ウ</item>
+        <item>エ</item>
+        <item>オ</item>
+        <item>カ</item>
+        <item>キ</item>
+        <item>ク</item>
+        <item>ケ</item>
+        <item>コ</item>
+        <item>サ</item>
+        <item>シ</item>
+        <item>ス</item>
+        <item>セ</item>
+        <item>ソ</item>
+        <item>タ</item>
+        <item>チ</item>
+        <item>ツ</item>
+        <item>テ</item>
+        <item>ト</item>
+        <item>ナ</item>
+        <item>ニ</item>
+        <item>ヌ</item>
+        <item>ネ</item>
+        <item>ノ</item>
+        <item>ハ</item>
+        <item>ヒ</item>
+        <item>フ</item>
+        <item>ヘ</item>
+        <item>ホ</item>
+        <item>マ</item>
+        <item>ミ</item>
+        <item>ム</item>
+        <item>メ</item>
+        <item>モ</item>
+        <item>ヤ</item>
+        <item>*</item>
+        <item>ユ</item>
+        <item>*</item>
+        <item>ヨ</item>
+        <item>ラ</item>
+        <item>リ</item>
+        <item>ル</item>
+        <item>レ</item>
+        <item>ロ</item>
+        <item>ワ</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>ヲ</item>
+        <item>ン</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>ガ</item>
+        <item>ギ</item>
+        <item>グ</item>
+        <item>ゲ</item>
+        <item>ゴ</item>
+        <item>ザ</item>
+        <item>ジ</item>
+        <item>ズ</item>
+        <item>ゼ</item>
+        <item>ゾ</item>
+        <item>ダ</item>
+        <item>ヂ</item>
+        <item>ヅ</item>
+        <item>デ</item>
+        <item>ド</item>
+        <item>バ</item>
+        <item>ビ</item>
+        <item>ブ</item>
+        <item>ベ</item>
+        <item>ボ</item>
+        <item>パ</item>
+        <item>ピ</item>
+        <item>プ</item>
+        <item>ペ</item>
+        <item>ポ</item>
+        <item>キャ</item>
+        <item>キュ</item>
+        <item>キョ</item>
+        <item>ギャ</item>
+        <item>ギュ</item>
+        <item>ギョ</item>
+        <item>シャ</item>
+        <item>シュ</item>
+        <item>ショ</item>
+        <item>ジャ</item>
+        <item>ジュ</item>
+        <item>ジョ</item>
+        <item>チャ</item>
+        <item>チュ</item>
+        <item>チョ</item>
+        <item>ヂャ</item>
+        <item>ヂュ</item>
+        <item>ヂョ</item>
+        <item>ニャ</item>
+        <item>ニュ</item>
+        <item>ニョ</item>
+        <item>ヒャ</item>
+        <item>ヒュ</item>
+        <item>ヒョ</item>
+        <item>ビャ</item>
+        <item>ビュ</item>
+        <item>ビョ</item>
+    </string-array>
+
+
+    <string-array name="kata_img">
+        <item>k01_a</item>
+        <item>k02_i</item>
+        <item>k03_u</item>
+        <item>k04_e</item>
+        <item>k05_o</item>
+        <item>k06_ka</item>
+        <item>k07_ki</item>
+        <item>k08_ku</item>
+        <item>k09_ke</item>
+        <item>k10_ko</item>
+        <item>k11_sa</item>
+        <item>k12_shi</item>
+        <item>k13_su</item>
+        <item>k14_se</item>
+        <item>k15_so</item>
+        <item>k16_ta</item>
+        <item>k17_chi</item>
+        <item>k18_tsu</item>
+        <item>k19_te</item>
+        <item>k20_to</item>
+        <item>k21_na</item>
+        <item>k22_ni</item>
+        <item>k23_nu</item>
+        <item>k24_ne</item>
+        <item>k25_no</item>
+        <item>k26_ha</item>
+        <item>k27_hi</item>
+        <item>k28_fu</item>
+        <item>k29_he</item>
+        <item>k30_ho</item>
+        <item>k31_ma</item>
+        <item>k32_mi</item>
+        <item>k33_mu</item>
+        <item>k34_me</item>
+        <item>k35_mo</item>
+        <item>k36_ya</item>
+        <item>*</item>
+        <item>k37_yu</item>
+        <item>*</item>
+        <item>k38_yo</item>
+        <item>k39_ra</item>
+        <item>k40_ri</item>
+        <item>k41_ru</item>
+        <item>k42_re</item>
+        <item>k43_ro</item>
+        <item>k44_wa</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>k45_wo</item>
+        <item>k46_n</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>k47_ga</item>
+        <item>k48_gi</item>
+        <item>k49_gu</item>
+        <item>k50_ge</item>
+        <item>k51_go</item>
+        <item>k52_za</item>
+        <item>k53_ji</item>
+        <item>k54_zu</item>
+        <item>k55_ze</item>
+        <item>k56_zo</item>
+        <item>k57_da</item>
+        <item>k58_ji</item>
+        <item>k59_zu</item>
+        <item>k60_de</item>
+        <item>k61_do</item>
+        <item>k62_ba</item>
+        <item>k63_bi</item>
+        <item>k64_bu</item>
+        <item>k65_be</item>
+        <item>k66_bo</item>
+        <item>k67_pa</item>
+        <item>k68_pi</item>
+        <item>k69_pu</item>
+        <item>k70_pe</item>
+        <item>k71_po</item>
+        <item>k_j01</item>
+        <item>k_j02</item>
+        <item>k_j03</item>
+        <item>k_j04</item>
+        <item>k_j05</item>
+        <item>k_j06</item>
+        <item>k_j07</item>
+        <item>k_j08</item>
+        <item>k_j09</item>
+        <item>k_j10</item>
+        <item>k_j11</item>
+        <item>k_j12</item>
+        <item>k_j13</item>
+        <item>k_j14</item>
+        <item>k_j15</item>
+        <item>k_j16</item>
+        <item>k_j17</item>
+        <item>k_j18</item>
+        <item>k_j19</item>
+        <item>k_j20</item>
+        <item>k_j21</item>
+        <item>k_j22</item>
+        <item>k_j23</item>
+        <item>k_j24</item>
+        <item>k_j25</item>
+        <item>k_j26</item>
+        <item>k_j27</item>
+        <item>k_j28</item>
+        <item>k_j29</item>
+        <item>k_j30</item>
+        <item>k_j31</item>
+        <item>k_j32</item>
+        <item>k_j33</item>
+        <item>k_j34</item>
+        <item>k_j35</item>
+        <item>k_j36</item>
+    </string-array>
+
+
+    <!--ARRAYS KANJI-->
+
+    <string-array name="Kanji">
+        <item>魚</item>
+        <item>肉</item>
+        <item>卵</item>
+        <item>水</item>
+        <item>食</item>
+        <item>飲</item>
+        <item>大</item>
+        <item>小</item>
+        <item>新</item>
+        <item>古</item>
+        <item>時</item>
+        <item>分</item>
+        <item>半</item>
+        <item>月</item>
+        <item>火</item>
+        <item>木</item>
+        <item>金</item>
+        <item>土</item>
+        <item>日</item>
+        <item>言</item>
+        <item>話</item>
+        <item>読</item>
+        <item>見</item>
+        <item>聞</item>
+        <item>書</item>
+        <item>一</item>
+        <item>二</item>
+        <item>三</item>
+        <item>四</item>
+        <item>五</item>
+        <item>六</item>
+        <item>七</item>
+        <item>八</item>
+        <item>九</item>
+        <item>十</item>
+        <item>年</item>
+        <item>東</item>
+        <item>西</item>
+        <item>北</item>
+        <item>南</item>
+        <item>口</item>
+        <item>買</item>
+        <item>百</item>
+        <item>千</item>
+        <item>万</item>
+        <item>円</item>
+        <item>行</item>
+        <item>来</item>
+        <item>会</item>
+        <item>休</item>
+        <item>本</item>
+        <item>京</item>
+    </string-array>
+
+
+    <string-array name="kanji_trad">
+        <item>Peixe</item>
+        <item>Carne</item>
+        <item>Ovo</item>
+        <item>Água</item>
+        <item>Comer</item>
+        <item>Beber</item>
+        <item>Grande</item>
+        <item>Pequeno</item>
+        <item>Novo</item>
+        <item>Velho</item>
+        <item>Tempo, Hora</item>
+        <item>Minuto, Parte, Dividir</item>
+        <item>Metade, Meio</item>
+        <item>Mês, Lua</item>
+        <item>Fogo</item>
+        <item>Árvore, Madeira</item>
+        <item>Ouro</item>
+        <item>Solo, Terra</item>
+        <item>Dia, Sol</item>
+        <item>Dizer</item>
+        <item>Conversar</item>
+        <item>Ler</item>
+        <item>Ver, Olhar, Ideia, Opinião</item>
+        <item>Ouvir, Escutar, Perguntar</item>
+        <item>Escrever</item>
+        <item>Um</item>
+        <item>Dois</item>
+        <item>Tres</item>
+        <item>Quatro</item>
+        <item>Cinco</item>
+        <item>Seis</item>
+        <item>Sete</item>
+        <item>Oito</item>
+        <item>Nove</item>
+        <item>Dez</item>
+        <item>Ano</item>
+        <item>Leste</item>
+        <item>Oeste</item>
+        <item>Norte</item>
+        <item>Sul</item>
+        <item>Boca</item>
+        <item>Comprar</item>
+        <item>Cem</item>
+        <item>Mil</item>
+        <item>Dez Mil</item>
+        <item>Iene, Circulo, Redondo</item>
+        <item>Ir</item>
+        <item>Vir, Próximo</item>
+        <item>Encontrar</item>
+        <item>Descansar, Folga</item>
+        <item>Livro, Presente, Origem, Contador para objetos cilindricos longos</item>
+        <item>Capital</item>
+    </string-array>
+
+
+    <string-array name="leitura_kun">
+        <item>さかな、うお</item>
+        <item>*</item>
+        <item>たまご</item>
+        <item>みず</item>
+        <item>た.べる、くう</item>
+        <item>の.む、の.み</item>
+        <item>おお.きい</item>
+        <item>ちい.さい、お, こ</item>
+        <item>あたら.しい</item>
+        <item>ふる.い</item>
+        <item>とき、どき</item>
+        <item>わ.かる、わ.ける、わ.け</item>
+        <item>なか.ば</item>
+        <item>つき</item>
+        <item>ひ、び</item>
+        <item>き、こ</item>
+        <item>かね、がね</item>
+        <item>つち</item>
+        <item>ひ、び、か</item>
+        <item>いう</item>
+        <item>はなし、はな.す</item>
+        <item>よむ</item>
+        <item>み.る、み.せる</item>
+        <item>き.く</item>
+        <item>か.く、がき</item>
+        <item>ひと.つ</item>
+        <item>ふた.つ</item>
+        <item>みっ.つ</item>
+        <item>よん、よっ.つ</item>
+        <item>いつ.つ</item>
+        <item>むっ.つ、むい</item>
+        <item>なな、なな.つ、なの</item>
+        <item>やっ.つ、や.つ</item>
+        <item>ここの.つ</item>
+        <item>とお</item>
+        <item>とし</item>
+        <item>ひがし</item>
+        <item>にし</item>
+        <item>きた</item>
+        <item>みなみ</item>
+        <item>くち</item>
+        <item>か.う</item>
+        <item>もも</item>
+        <item>ち</item>
+        <item>よろず</item>
+        <item>まる、まる.い</item>
+        <item>いく、おこなう、ゆく</item>
+        <item>く.る、きた.す</item>
+        <item>あ.う</item>
+        <item>やす.む</item>
+        <item>もと</item>
+        <item>みやこ</item>
+    </string-array>
+
+
+    <string-array name="leitura_on">
+        <item>ギョ</item>
+        <item>ニク</item>
+        <item>*</item>
+        <item>スイ</item>
+        <item>ショク</item>
+        <item>イン</item>
+        <item>ダイ、タイ</item>
+        <item>ショウ</item>
+        <item>シン</item>
+        <item>コ</item>
+        <item>ジ</item>
+        <item>フン、ブン、ブ</item>
+        <item>ハン</item>
+        <item>ゲツ、ガツ</item>
+        <item>カ</item>
+        <item>モク、ボク</item>
+        <item>キン</item>
+        <item>ド、ト</item>
+        <item>ニチ、ジツ</item>
+        <item>ゲン</item>
+        <item>ワ</item>
+        <item>ドク、トク</item>
+        <item>ケン</item>
+        <item>ブン、モン</item>
+        <item>ショ</item>
+        <item>イチ</item>
+        <item>二</item>
+        <item>サン</item>
+        <item>シ</item>
+        <item>ゴ</item>
+        <item>ロク</item>
+        <item>シチ</item>
+        <item>ハチ</item>
+        <item>キュウ、ク</item>
+        <item>ジュウ</item>
+        <item>ネン</item>
+        <item>トウ</item>
+        <item>セイ、サイ</item>
+        <item>ホク</item>
+        <item>ナン</item>
+        <item>コウ、ク</item>
+        <item>バイ</item>
+        <item>ヒャク</item>
+        <item>セン</item>
+        <item>マン、バン</item>
+        <item>エン</item>
+        <item>コウ、ギョウ、アン</item>
+        <item>ライ</item>
+        <item>カイ</item>
+        <item>キュウ</item>
+        <item>ホン</item>
+        <item>キョウ、ケイ、キン</item>
+    </string-array>
+
+
+    <string-array name="kanji_num_tracos">
+        <item>11</item>
+        <item>6</item>
+        <item>7</item>
+        <item>4</item>
+        <item>9</item>
+        <item>12</item>
+        <item>3</item>
+        <item>3</item>
+        <item>13</item>
+        <item>4</item>
+        <item>10</item>
+        <item>4</item>
+        <item>5</item>
+        <item>4</item>
+        <item>4</item>
+        <item>4</item>
+        <item>8</item>
+        <item>3</item>
+        <item>4</item>
+        <item>7</item>
+        <item>13</item>
+        <item>14</item>
+        <item>7</item>
+        <item>14</item>
+        <item>10</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>5</item>
+        <item>4</item>
+        <item>4</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>6</item>
+        <item>8</item>
+        <item>6</item>
+        <item>5</item>
+        <item>9</item>
+        <item>3</item>
+        <item>12</item>
+        <item>6</item>
+        <item>3</item>
+        <item>3</item>
+        <item>4</item>
+        <item>6</item>
+        <item>7</item>
+        <item>6</item>
+        <item>6</item>
+        <item>5</item>
+        <item>8</item>
+    </string-array>
+
+
+    <string-array name="kanji_ex1">
+        <item>わたしは魚を食べません。</item>
+        <item>レオンは肉がすきじゃない。</item>
+        <item>まい日卵を食べます。</item>
+        <item>きょうたくさん水を飲みました。</item>
+        <item>チョコレートを食べることがすきです。</item>
+        <item>まい日コーヒーを飲みます。</item>
+        <item>あそこには大きいいぬがいます。</item>
+        <item>このねこは小さいです。</item>
+        <item>新しいパソコンがほしいです。</item>
+        <item>このたてものは古いです。</item>
+        <item>こどもの時ともだちとあそびました。</item>
+        <item>そのケーキを６つに分けました。</item>
+        <item>わたしたちは１時かん半ゲームをした。</item>
+        <item>きょうは月がきれいです。</item>
+        <item>はな火を見に行きました。</item>
+        <item>ははのいえにさくら木があります。</item>
+        <item>わたしはお金がほしい。</item>
+        <item>きのう土よう日でした。</item>
+        <item>こどもの日はゴールデンウィークの休日です。</item>
+        <item>そのどうぶつは日本ごでなにと言いますか。</item>
+        <item>でん話で話すことがすきじゃない。</item>
+        <item>せん月おもしろい本を読みました。</item>
+        <item>きょうかわいいいぬを見ました。</item>
+        <item>そのＣＤもう聞きました。</item>
+        <item>ともだちにてがみを書きました。</item>
+        <item>ここにケーキが一つだけあります。</item>
+        <item>コーヒー二つください</item>
+        <item>五月三日からしごとをはじめます。</item>
+        <item>わたしのたんじょうびは四月四日です。</item>
+        <item>このいえにはへやが五つあります。</item>
+        <item>テストは六月六日です。</item>
+        <item>七つのたいざいはいいあにめですか。</item>
+        <item>パン八つをください。</item>
+        <item>あねのたんじょうびパーティーは十月九日です。</item>
+        <item>十日にきゅうりょうをうけとります。</item>
+        <item>こ年だいがくでそつぎょうします。</item>
+        <item>東はあそこです。</item>
+        <item>西口はどこですか。</item>
+        <item>あれは北口です。</item>
+        <item>ブラジルの南はさむいです。</item>
+        <item>その口べにはきれいです。</item>
+        <item>かわいいふくを買いました。</item>
+        <item>ここには百にんがいます。</item>
+        <item>このパソコンは２千レアルぐらいです。</item>
+        <item>ちちのくるまは１００万円でした。</item>
+        <item>１００円は１ドルぐらいです。</item>
+        <item>まい日がっこうへ行きます。</item>
+        <item>ともだちはいえに来ます。</item>
+        <item>レストランでかれしを会います。</item>
+        <item>きのうがっこうを休みました。</item>
+        <item>松本さんに本をあげました。</item>
+        <item>わたしは東京にすんでいます。</item>
+    </string-array>
+
+
+    <string-array name="kanji_ex1_trad">
+        <item>Eu não como peixe.</item>
+        <item>O Leon não gosta de carne.</item>
+        <item>Eu como ovo todo dia.</item>
+        <item>Hoje eu bebi bastante água.</item>
+        <item>Eu gosto de comer chocolate.</item>
+        <item>Eu bebo café todos os dias.</item>
+        <item>Tem um cachorro grande ali.</item>
+        <item>Este gato é pequeno.</item>
+        <item>Eu quero um computador novo.</item>
+        <item>Este prédio é velho.</item>
+        <item>Quando eu era criança brincava com meus amigos.</item>
+        <item>Eu dividi esse bolo em 6 pedaços.</item>
+        <item>Nós jogamos vídeo game por 1 hora e meia.</item>
+        <item>Hoje a lua está linda.</item>
+        <item>Fui ver a queima dos fogos de artifício.</item>
+        <item>Na casa da minha mãe tem uma cerejeira.</item>
+        <item>Eu quero dinheiro.</item>
+        <item>Ontem foi sábado.</item>
+        <item>O dia dos meninos é um feriado da Golden Week.</item>
+        <item>Como se chama esse animal em japonês?</item>
+        <item>Eu não gosto de falar ao telefone.</item>
+        <item>Mês passado eu li um livro interessante.</item>
+        <item>Hoje eu vi um cachorro fofinho.</item>
+        <item>Eu já ouvi esse CD.</item>
+        <item>Eu escrevi uma carta ao meu amigo.</item>
+        <item>Aqui só tem um bolo.</item>
+        <item>2 xícaras de café, por favor.</item>
+        <item>Começo a trabalhar no dia 3 de Maio.</item>
+        <item>Meu aniversário é dia 4 de Abril.</item>
+        <item>Esta casa tem 5 cômodos.</item>
+        <item>A prova será dia 6 de Junho.</item>
+        <item>Nanatsu no Taizai é um bom anime.</item>
+        <item>8 pães, por favor.</item>
+        <item>A festa de aniversário da minha irmã é dia 9 de Outubro.</item>
+        <item>Eu recebo meu salário no décimo dia do mês.</item>
+        <item>Eu vou me formar na universidade este ano.</item>
+        <item>O leste é para lá.</item>
+        <item>Onde fica a saída Oeste?</item>
+        <item>Aquela é a saída Norte.</item>
+        <item>O sul do Brasil é frio.</item>
+        <item>Este batom é bonito.</item>
+        <item>Comprei roupas bonitas.</item>
+        <item>Tem cem pessoas aqui.</item>
+        <item>Este computador custa mais ou menos 2 mil reais.</item>
+        <item>O carro do meu pai custa 1 milhão de Ienes.</item>
+        <item>100 Ienes custa aproximadamente 1 dólar.</item>
+        <item>Eu vou a escola todos os dias.</item>
+        <item>Meu amigo vem a minha casa.</item>
+        <item>Vou encontrar meu namorado no restaurante.</item>
+        <item>Ontem eu não fui a escola.</item>
+        <item>Eu dei um livro ao Matsumoto.</item>
+        <item>Eu moro em Tóquio.</item>
+    </string-array>
+
+
+    <string-array name="kanji_ex2">
+        <item>これはあねの金魚です。</item>
+        <item>*</item>
+        <item>*</item>
+        <item>水よう日はちちのたんじょうびです。</item>
+        <item>がっこうの食どうはひろいです。</item>
+        <item>わたしは飲しゅがあまりすきじゃない。</item>
+        <item>ねこが大すきです。</item>
+        <item>いもうとは小がくせいです。</item>
+        <item>ちちは新聞をよく読みます。</item>
+        <item>がくせいのとき古書をつかいました。</item>
+        <item>いまなん時ですか。</item>
+        <item>まい日４５分日本ごをべんきょうします。</item>
+        <item>*</item>
+        <item>来月イギリスに行きます。</item>
+        <item>火よう日のじゅぎょうを休みました。</item>
+        <item>木よう日にテストがあります。</item>
+        <item>金よう日にピザを食べました。</item>
+        <item>*</item>
+        <item>*</item>
+        <item>日本ごはむずかしいな言ごです。</item>
+        <item>*</item>
+        <item>わたしのしゅみは読書です。</item>
+        <item>これはわたしのい見です。</item>
+        <item>きょうの新聞を読みましたか。</item>
+        <item>あの書てんに本はやすいです。</item>
+        <item>じゅぎょうはごご一時までです。</item>
+        <item>二年まえサンパウロへ行きました。</item>
+        <item>かぞくは三にんです。</item>
+        <item>*</item>
+        <item>おとうとは五さいです。</item>
+        <item>*</item>
+        <item>パーティーは七時です。</item>
+        <item>八月にブラジルにかえります。</item>
+        <item>九時までゲームをしました。</item>
+        <item>きょう十さいになります。</item>
+        <item>きょ年アメリカに行きました。</item>
+        <item>*</item>
+        <item>くにの北西にうまれました。</item>
+        <item>北海道はさむいところです。</item>
+        <item>南べいに行きしました。</item>
+        <item>東京のじん口は一千万いじょうです。</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>かぞくとりょ行をしました。</item>
+        <item>わたしたちは来年けっこんします。</item>
+        <item>会ぎはあしたです。</item>
+        <item>あした休日です。</item>
+    </string-array>
+
+
+    <string-array name="kanji_ex2_trad">
+        <item>Este é o peixe dourado da minha irmã.</item>
+        <item>*</item>
+        <item>*</item>
+        <item>Quarta feira é aniversário do meu pai.</item>
+        <item>O refeitório da escola é espaçoso.</item>
+        <item>Eu não gosto muito de beber álcool.</item>
+        <item>Eu amo gatos.</item>
+        <item>Minha irmã é uma estudante do ensino fundamental.</item>
+        <item>Meu pai lê bastante jornal.</item>
+        <item>Na época de estudante eu usava livros de segunda mão.</item>
+        <item>Que horas são?</item>
+        <item>Todos os dias eu estudo japonês por 45 minutos.</item>
+        <item>*</item>
+        <item>Mês que vem eu vou à Inglaterra.</item>
+        <item>Eu faltei a aula de terça feira.</item>
+        <item>Quinta feira tem prova.</item>
+        <item>Sexta feira eu comi pizza.</item>
+        <item>*</item>
+        <item>*</item>
+        <item>Japonês é um idioma difícil.</item>
+        <item>*</item>
+        <item>Meu hobby é ler.</item>
+        <item>Esta é minha opinião.</item>
+        <item>Você leu o jornal de hoje?</item>
+        <item>Os livros são baratos naquela livraria.</item>
+        <item>A aula é até as 13 horas.</item>
+        <item>Há 2 anos eu fui à São Paulo.</item>
+        <item>Minha família tem 3 pessoas.</item>
+        <item>*</item>
+        <item>Meu irmão tem 5 anos.</item>
+        <item>*</item>
+        <item>A festa será as 7 horas.</item>
+        <item>Em agosto eu volto ao Brasil.</item>
+        <item>Joguei vídeo game até as 9 horas.</item>
+        <item>Hoje eu faço 10 anos.</item>
+        <item>Ano passado eu fui aos Estados Unidos.</item>
+        <item>*</item>
+        <item>Eu nasci no Noroeste do país.</item>
+        <item>Hokkaido é um lugar frio.</item>
+        <item>Eu fui à América do Sul.</item>
+        <item>Tóquio tem uma população de mais de 10 milhões.</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>*</item>
+        <item>Eu viajei com minha família.</item>
+        <item>Vamos nos casar no ano que vem.</item>
+        <item>A reunião será amanhã.</item>
+        <item>Amanhã é feriado.</item>
+    </string-array>
+
+
+    <string-array name="kanji_capitulo">
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>6</item>
+        <item>6</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>9</item>
+        <item>9</item>
+        <item>9</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>11</item>
+        <item>11</item>
+        <item>11</item>
+        <item>11</item>
+        <item>11</item>
+        <item>11</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>12</item>
+        <item>13</item>
+        <item>13</item>
+        <item>13</item>
+        <item>13</item>
+        <item>13</item>
+        <item>16</item>
+        <item>16</item>
+        <item>16</item>
+        <item>16</item>
+        <item>16</item>
+        <item>18</item>
+        <item>18</item>
+        <item>18</item>
+        <item>18</item>
+        <item>18</item>
+        <item>18</item>
+    </string-array>
+
+
+    <string-array name="kanji_categoria">
+        <item>Comida</item>
+        <item>Comida</item>
+        <item>Comida</item>
+        <item>Comida</item>
+        <item>Comida</item>
+        <item>Comida</item>
+        <item>Adjetivos</item>
+        <item>Adjetivos</item>
+        <item>Adjetivos</item>
+        <item>Adjetivos</item>
+        <item>Tempo</item>
+        <item>Tempo</item>
+        <item>Tempo</item>
+        <item>Dias da Semana(Natureza)</item>
+        <item>Dias da Semana(Natureza)</item>
+        <item>Dias da Semana(Natureza)</item>
+        <item>Dias da Semana(Natureza)</item>
+        <item>Dias da Semana(Natureza)</item>
+        <item>Dias da Semana(Natureza)</item>
+        <item>Verbos</item>
+        <item>Verbos</item>
+        <item>Verbos</item>
+        <item>Verbos</item>
+        <item>Verbos</item>
+        <item>Verbos</item>
+        <item>Números</item>
+        <item>Números</item>
+        <item>Números</item>
+        <item>Números</item>
+        <item>Números</item>
+        <item>Números</item>
+        <item>Números</item>
+        <item>Números</item>
+        <item>Números</item>
+        <item>Números</item>
+        <item>Tempo</item>
+        <item>Lugar</item>
+        <item>Lugar</item>
+        <item>Lugar</item>
+        <item>Lugar</item>
+        <item>Lugar</item>
+        <item>Verbos</item>
+        <item>Números</item>
+        <item>Números</item>
+        <item>Números</item>
+        <item>Números</item>
+        <item>Verbos</item>
+        <item>Verbos</item>
+        <item>Verbos</item>
+        <item>Verbos</item>
+        <item>Objetos</item>
+        <item>Lugar</item>
+    </string-array>
+
+
+    <!--ARRAYS -->
+    <string-array name="vocabCateg">
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+        <item>たべもの</item>
+    </string-array>
+
+    <string-array name="listaVocab">
+        <item>たべもの</item>
+        <item>ごはん</item>
+        <item>パン</item>
+        <item>シリアル</item>
+        <item>ジャム</item>
+        <item>バター</item>
+        <item>さかな</item>
+        <item>えび</item>
+        <item>かに</item>
+        <item>にく</item>
+        <item>ぎゅうにく</item>
+        <item>とりにく</item>
+        <item>ぶたにく</item>
+        <item>たまご</item>
+        <item>チーズ</item>
+        <item>ヨーグルト</item>
+        <item>やさい</item>
+        <item>きゃべつ</item>
+        <item>きゅうり</item>
+        <item>じゃがいも</item>
+        <item>たまねぎ</item>
+        <item>トメト</item>
+        <item>にんじん</item>
+        <item>レタス</item>
+        <item>くだもの</item>
+        <item>いちご</item>
+        <item>すいか</item>
+        <item>バナナ</item>
+        <item>ぶどう</item>
+        <item>みかん</item>
+        <item>りんご</item>
+        <item>レモン</item>
+        <item>おかし</item>
+        <item>アイスクリーム</item>
+        <item>あめ</item>
+        <item>クッキー</item>
+        <item>ケーキ</item>
+        <item>チョコレート</item>
+        <item>さとう</item>
+        <item>しお</item>
+        <item>しょうゆ</item>
+        <item>こめ</item>
+        <item>とうふ</item>
+        <item>のり</item>
+        <item>わさび</item>
+    </string-array>
+
+    <string-array name="listaVocabTraduz">
+        <item>Comida</item>
+        <item>Arroz</item>
+        <item>Pão</item>
+        <item>Cereal</item>
+        <item>Geleia</item>
+        <item>Manteiga</item>
+        <item>Peixe</item>
+        <item>Camarão</item>
+        <item>Caranguejo</item>
+        <item>Carne</item>
+        <item>Carne de vaca</item>
+        <item>Carne de frango</item>
+        <item>Carne de porco</item>
+        <item>Ovo</item>
+        <item>Queijo</item>
+        <item>Iogurte</item>
+        <item>Verduras e legumes</item>
+        <item>Repolho</item>
+        <item>Pepino</item>
+        <item>Batata</item>
+        <item>Cebola</item>
+        <item>Tomate</item>
+        <item>Cenoura</item>
+        <item>Alface</item>
+        <item>Frutas</item>
+        <item>Morango</item>
+        <item>Melancia</item>
+        <item>Banana</item>
+        <item>Uva</item>
+        <item>Tangerina</item>
+        <item>Maçã</item>
+        <item>Limão</item>
+        <item>Doces</item>
+        <item>Sorvete</item>
+        <item>Bala</item>
+        <item>Cookie</item>
+        <item>Bolo</item>
+        <item>Chocolate</item>
+        <item>Açúcar</item>
+        <item>Sal</item>
+        <item>Molho de soja</item>
+        <item>Arroz cru</item>
+        <item>Tofu</item>
+        <item>Alga</item>
+        <item>Raíz-forte</item>
+    </string-array>
+
+    <string-array name="vocabImgs">
+        <item>v_01_Comida</item>
+        <item>v_02_arroz</item>
+        <item>v_03_pao</item>
+        <item>v_04_cereal</item>
+        <item>v_05_geleia</item>
+        <item>v_06_manteiga</item>
+        <item>v_07_peixe</item>
+        <item>v_08_camarao</item>
+        <item>v_09_caranguejo</item>
+        <item>v_10_carne</item>
+        <item>v_11_carne_de_vaca</item>
+        <item>v_12_carne_de_frango</item>
+        <item>v_13_carne_de_porco</item>
+        <item>v_14_ovo</item>
+        <item>v_15_queijo</item>
+        <item>v_16_iogurte</item>
+        <item>v_17_verduras_e_legumes</item>
+        <item>v_18_repolho</item>
+        <item>v_19_pepino</item>
+        <item>v_20_batata</item>
+        <item>v_21_cebola</item>
+        <item>v_22_tomate</item>
+        <item>v_23_cenoura</item>
+        <item>v_24_alface</item>
+        <item>v_25_frutas</item>
+        <item>v_26_morango</item>
+        <item>v_27_melancia</item>
+        <item>v_28_banana</item>
+        <item>v_28_uva</item>
+        <item>v_29_tangerina</item>
+        <item>v_30_maca</item>
+        <item>v_31_limao</item>
+        <item>v_32_doces</item>
+        <item>v_33_sorvete</item>
+        <item>v_34_bala</item>
+        <item>v_35_cookie</item>
+        <item>v_36_bolo</item>
+        <item>v_37_chocolate</item>
+        <item>v_38_acucar</item>
+        <item>v_39_sal</item>
+        <item>v_40_molho_de_soja</item>
+        <item>v_41_arroz_cru</item>
+        <item>v_42_tofu</item>
+        <item>v_43_alga</item>
+        <item>v_44_raiz_forte</item>
+    </string-array>
+
+
+</resources>

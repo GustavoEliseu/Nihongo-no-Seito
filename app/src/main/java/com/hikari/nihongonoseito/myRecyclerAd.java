@@ -2,13 +2,11 @@ package com.hikari.nihongonoseito;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,11 +33,15 @@ public class myRecyclerAd extends RecyclerView.Adapter<myRecyclerAd.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+        try{
         viewHolder.mTitleView.setText(mData[i]);
         viewHolder.vocabTraduz.setText(mDataTrad[i]);
         viewHolder.imageVocab.setImageDrawable( context.getResources().getDrawable(context.getResources().getIdentifier(mvVocabsImg[i], "drawable", context.getPackageName())));
         //viewHolder.imageVocab.setImageDrawable(context.getResources().getDrawable(R.drawable.carne_img));
-        viewHolder.imageMarcarVocab.setImageDrawable(context.getResources().getDrawable(R.drawable.ver_img));
+        viewHolder.imageMarcarVocab.setImageDrawable(context.getResources().getDrawable(R.drawable.ver_img));}
+        catch(Exception e){
+            e.printStackTrace();
+        }
 
     }
 
