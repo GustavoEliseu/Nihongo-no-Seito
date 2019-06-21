@@ -92,12 +92,17 @@ public class PlaceholderFragment extends Fragment implements myRecyclerAdapter.I
     public void onItemClick(View view, int position, Boolean tipo) {
         String teste = "";
         if(tipo) {
-            if(((myRecyclerAdapter.ViewHolder) this.recyclerView.getChildViewHolder(
-                    this.recyclerView.getChildAt(position)
-            )).controleCor) {
-                ((ImageView) view).setImageDrawable(Objects.requireNonNull(getContext()).getDrawable(R.drawable.ver_img));
-            }else{
-                ((ImageView) view).setImageDrawable(Objects.requireNonNull(getContext()).getDrawable(R.drawable.naover_img));
+            try {
+                if (((myRecyclerAdapter.ViewHolder) this.recyclerView.getChildViewHolder(
+                        this.recyclerView.getChildAt(position)
+                )).controleCor) {
+                    ((ImageView) view).setImageDrawable(Objects.requireNonNull(getContext()).getDrawable(R.drawable.ver_img));
+                } else {
+                    ((ImageView) view).setImageDrawable(Objects.requireNonNull(getContext()).getDrawable(R.drawable.naover_img));
+                }
+            }catch(Exception e){
+                e.printStackTrace();
+                Toast.makeText(getContext(),"Crash no Crashalytics",Toast.LENGTH_SHORT).show();
             }
         }
         else teste = "vocab na posicao "+ position;

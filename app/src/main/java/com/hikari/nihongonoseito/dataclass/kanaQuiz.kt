@@ -1,4 +1,6 @@
 package com.hikari.nihongonoseito.dataclass
 
-class kanaQuiz(val kanaId:Int, val nome:String, val romaji:String,val img:String) {
+import java.io.Serializable
+
+class kanaQuiz(val kanaId:Int, val nome:String, val romaji:String,val img:String): Serializable {
 }

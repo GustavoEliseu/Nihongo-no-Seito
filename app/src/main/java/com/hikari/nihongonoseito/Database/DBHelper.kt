@@ -80,20 +80,20 @@ class DBHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) : S
     }
 
     private val CREATE_TABLE_ACHIEVEMENTS = "CREATE TABLE IF NOT EXISTS $TABLE_CONQUISTA (\n" +
-            "$COLUNA_ID INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
+            "$COLUNA_ID INTEGER PRIMARY KEY,\n" +
             "$COLUNA_NOME TEXT NOT NULL,\n" +
             "$COLUNA_DESC_CONQ TEXT NOT NULL,\n" +
             "$COLUNA_MOSTRA INT DEFAULT 0 CHECK ($COLUNA_MOSTRA >= 0 AND $COLUNA_MOSTRA <= 1)\n" +
             ");\n"
 
     private val CREATE_TABLE_USER = "CREATE TABLE IF NOT EXISTS $TABLE_USUARIO (" +
-            "    $COLUNA_ID INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "    $COLUNA_ID INTEGER PRIMARY KEY," +
             "    $COLUNA_RANK TEXT NOT NULL," +
             "    $COLUNA_DIASQUIZ INT DEFAULT 0" +
             "    );"
 
     private val CREATE_TABLE_HIRAGANA = "CREATE TABLE IF NOT EXISTS $TABLE_HIRAGANA ( " +
-            "$COLUNA_ID INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "$COLUNA_ID INTEGER PRIMARY KEY," +
             "$COLUNA_TXTPT TEXT NOT NULL," +
             "$COLUNA_TXTJP TEXT NOT NULL," +
             "$COLUNA_NOMEIMG TEXT NOT NULL," +
@@ -102,7 +102,7 @@ class DBHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) : S
             "$COLUNA_ERROLEIT INT NOT NULL);"
 
     private val CREATE_TABLE_KATAKANA = "CREATE TABLE IF NOT EXISTS $TABLE_KATAKANA ( " +
-            "$COLUNA_ID INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "$COLUNA_ID INTEGER PRIMARY KEY," +
             "$COLUNA_TXTPT TEXT NOT NULL," +
             "$COLUNA_TXTJP TEXT NOT NULL," +
             "$COLUNA_NOMEIMG TEXT NOT NULL," +
@@ -111,7 +111,7 @@ class DBHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) : S
             "$COLUNA_ERROLEIT INT NOT NULL);"
 
     private val CREATE_TABLE_KANJI = "CREATE TABLE IF NOT EXISTS $TABLE_KANJI (" +
-            "    $COLUNA_ID INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "    $COLUNA_ID INTEGER PRIMARY KEY," +
             "    $COLUNA_TXTKUN TEXT NOT NULL," +
             "    $COLUNA_TXTON TEXT NOT NULL," +
             "    $COLUNA_TXTPT TEXT NOT NULL," +
@@ -133,12 +133,13 @@ class DBHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) : S
 
 
     private val CREATE_TABLE_VOCAB = "CREATE TABLE IF NOT EXISTS $TABLE_VOCAB (\n" +
-            "$COLUNA_ID INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
+            "$COLUNA_ID INTEGER PRIMARY KEY,\n" +
             "$COLUNA_NOME TEXT NOT NULL,\n" +
             "$COLUNA_TRAD TEXT NOT NULL,\n" +
             "$COLUNA_NOMEIMG TEXT NOT NULL,\n" +
-            "$COLUNA_ACERTO INT NOT NULL\n" +
-            "$COLUNA_ERRO INT NOT NULL\n" +
+            "$COLUNA_ACERTO INT NOT NULL,\n" +
+            "$COLUNA_ERRO INT NOT NULL,\n" +
+            "$COLUNA_QUIZ INT NOT NULL\n"+
             ");\n"
 
     //onCreate com auto-inicialização para testes
@@ -203,8 +204,8 @@ class DBHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) : S
         for (x in 0 until mArrayHira.size) {
             val isJun: Int = if (x > 79) 2 else if (x > 55) 1 else 0
 
-            val hira = Kana(mArrayHira[x], mArrayKanaRomaji[x], mArrayHiraImg[x], isJun,0,0)
-            val kata = Kana(mArrayKata[x], mArrayKanaRomaji[x], mArrayKataImg[x], isJun,0,0)
+            val hira = Kana(x,mArrayHira[x], mArrayKanaRomaji[x], mArrayHiraImg[x], isJun,0,0)
+            val kata = Kana(x, mArrayKata[x], mArrayKanaRomaji[x], mArrayKataImg[x], isJun,0,0)
 
             addHiraKata(db, hira, TABLE_HIRAGANA)
             addHiraKata(db, kata, TABLE_KATAKANA)
@@ -212,13 +213,17 @@ class DBHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) : S
 
         for (x in 0 until mArrayKanji.size) {
 
-            val myKanji = Kanji(mArrayKanji[x], mArrayKanjiTrad[x], mArrayKanjiKun[x], mArrayKanjiOn[x], mArrayKanjiNumTracos[x], mArrayKanjiCategoria[x], mArrayKanjiCapitulo[x], mArrayKanjiEx1[x], mArrayKanjiEx2[x], mArrayKanjiEx1Trad[x], mArrayKanjiEx2Trad[x], true, 0, 0, 0, 0)
+            val myKanji = Kanji(x, mArrayKanji[x], mArrayKanjiTrad[x], mArrayKanjiKun[x], mArrayKanjiOn[x], mArrayKanjiNumTracos[x], mArrayKanjiCategoria[x], mArrayKanjiCapitulo[x], mArrayKanjiEx1[x], mArrayKanjiEx2[x], mArrayKanjiEx1Trad[x], mArrayKanjiEx2Trad[x], true, 0, 0, 0, 0)
             addKanji(db, myKanji)
         }
 
         for (x in 0 until mArrayVocabNome.size) {
-            val myVocab = Vocab(mArrayVocabNome[x], mArrayVocabTrad[x], mArrayVocabimg[x], mArrayVocabCategory[x], 0, 0,0)
-            addVocab(db, myVocab)
+            val myVocab = Vocab(x, mArrayVocabNome[x], mArrayVocabTrad[x], mArrayVocabimg[x], mArrayVocabCategory[x], 0, 0,0)
+            var x = addVocab(db, myVocab)
+
+            if(x == -1L){
+                Log.e("testee: ", "eita, não adicionou!")
+            }
         }
 
     }
@@ -226,6 +231,7 @@ class DBHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) : S
 
     private fun addKanji(db: SQLiteDatabase, myKanji: Kanji): Long {
         val values = ContentValues()
+        values.put(COLUNA_ID,myKanji.id)
         values.put(COLUNA_TXTJP, myKanji.text_jap)
         values.put(COLUNA_TXTPT, myKanji.text_pt)
         values.put(COLUNA_TXTKUN, myKanji.text_kun)
@@ -240,7 +246,7 @@ class DBHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) : S
         values.put(COLUNA_ERROSIG, myKanji.erros_sig)
         values.put(COLUNA_ACERTOLEIT, myKanji.acerto_leit)
         values.put(COLUNA_ERROLEIT, myKanji.erro_leit)
-        values.put(COLUNA_QUIZ, myKanji.isInQuiz)
+        values.put(COLUNA_QUIZ, if(myKanji.isInQuiz) 0 else 1)
         values.put(COLUNA_NUM_TRC, myKanji.text_num_trac)
 
         values.put(COLUNA_TXTPT, myKanji.text_pt)
@@ -261,6 +267,7 @@ class DBHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) : S
 
     fun addHiraKata(db: SQLiteDatabase, kana: Kana, table: String): Long {
         val values = ContentValues()
+        values.put(COLUNA_ID,kana.id)
         values.put(COLUNA_TXTPT, kana.romaji)
         values.put(COLUNA_TXTJP, kana.nome)
         values.put(COLUNA_BAS_JUN, kana.Bas_Var_Jun)
@@ -280,16 +287,18 @@ class DBHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) : S
 
     fun addVocab(db: SQLiteDatabase, vocab: Vocab): Long {
         val values = ContentValues()
+        values.put(COLUNA_ID,vocab.id)
         values.put(COLUNA_NOME, vocab.vocabNome)
         values.put(COLUNA_TRAD, vocab.vocabTrad)
         values.put(COLUNA_ACERTO, vocab.vocabAcerto)
         values.put(COLUNA_ERRO, vocab.vocabErros)
         values.put(COLUNA_NOMEIMG, vocab.vocabImg)
+        values.put(COLUNA_QUIZ,vocab.isInQuiz)
         var myLong: Long
-        try {
+
             myLong = db.insertOrThrow(TABLE_VOCAB, null, values)
             //precaução para caso de algum erro
-        } catch (t: Throwable) {
+        try {} catch (t: Throwable) {
             t.printStackTrace()
             myLong = -1
         }
@@ -377,84 +386,14 @@ class DBHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) : S
         return db.rawQuery("SELECT * FROM $TABLE_KANJI WHERE $COLUNA_ID = $id", null)
     }
 
-    fun selectVocab(id:Int): Cursor?{
+    fun selectVocab(nome:String): Cursor?{
         val db = this.readableDatabase
-        return db.rawQuery("SELECT * FROM $TABLE_VOCAB WHERE $COLUNA_ID = $id", null)
+
+        return db.rawQuery("SELECT * FROM $TABLE_VOCAB WHERE $COLUNA_NOME like '$nome'", null)
     }
 
 
 
-/*
-
-
- //Seleciona o ultimo AUTOINCREMENT adicionado na tabela Alunos
- fun getLastInsert():Cursor?{
-     val db = this.readableDatabase
-     return db.query(TABLE_ALUNOS,  arrayOf(COLUNA_MATRICULA), null, null, null, null, COLUNA_MATRICULA+" DESC");
-     //return db.rawQuery("SELECT $COLUNA_MATRICULA FROM $TABLE_ALUNOS ORDER BY DESC LIMIT 1 ",null)
- }
-
- //FUNÇÃO TESTE, adiciona notas para os alunos gerados automaticamente
- fun addNota(nota: Nota, db: SQLiteDatabase) {
-     val values = ContentValues()
-     values.put(COLUNA_MATRICULA,nota.aluno.matricula)
-     values.put(COLUNA_NOTA, nota.valor)
-     values.put(COLUNA_MATERIA, nota.materia)
-     db.insertOrThrow(TABLE_NOTAS, null, values)
-
- }
-
- //Função para adicionar a nota de um aluno
- fun addNota(nota: Nota) {
-     val values = ContentValues()
-     values.put(COLUNA_MATRICULA,nota.aluno.matricula)
-     values.put(COLUNA_NOTA, nota.valor)
-     values.put(COLUNA_MATERIA, nota.materia)
-     val db = this.writableDatabase
-     db.insertOrThrow(TABLE_NOTAS, null, values)
-     db.close()
-
- }
-
- fun deleteNota(id:Long, matricula: Int):Boolean{
-     val db= this.writableDatabase
-     val args:Array<String> = arrayOf(id.toString(),matricula.toString())
-     return db.delete(TABLE_NOTAS,"ROWID=? and $COLUNA_MATRICULA =? ",args )>0
- }
-
- fun deleteAllNotas(matricula:Int){
-     val db= this.writableDatabase
-     val args:Array<String> = arrayOf(matricula.toString())
-     db.delete(TABLE_NOTAS,"$COLUNA_MATRICULA =? ",args )>0
- }
-
- fun deleteAluno(matricula:Int):Boolean{
-     val db= this.writableDatabase
-     val args:Array<String> = arrayOf(matricula.toString())
-     val alunoDeletado= db.delete(TABLE_ALUNOS,"$COLUNA_MATRICULA =? ",args)>0
-     if(alunoDeletado==true){
-         deleteAllNotas(matricula)
-     }
-     return alunoDeletado
- }
-
- //função que seleciona todos os launos para preencher a lista
- fun getAllAlunos(): Cursor? {
-     val db = this.readableDatabase
-     return db.rawQuery("SELECT * FROM $TABLE_ALUNOS", null)
- }
-
- //criada para caso seja solicitado
- fun getAllNotas(): Cursor? {
-     val db = this.readableDatabase
-     return db.rawQuery("SELECT  * FROM $TABLE_NOTAS", null)
- }
-
- //função para receber todas as notas de um aluno
- fun getAllNotasAluno(matricula:Int): Cursor? {
-     val db = this.readableDatabase
-     return db.rawQuery("SELECT ROWID as rowid,* FROM $TABLE_NOTAS WHERE $COLUNA_MATRICULA  = "+matricula, null)
- }*/
 
 
 }

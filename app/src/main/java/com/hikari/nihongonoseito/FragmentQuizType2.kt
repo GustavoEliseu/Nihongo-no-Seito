@@ -7,6 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.lorentzos.flingswipe.SwipeFlingAdapterView
+import kotlinx.android.synthetic.main.fragment_quiz_type2.view.*
+
 
 class FragmentQuizType2 : Fragment() {
     private val ARG_PARAM1 = "perguntasTxt"
@@ -31,7 +35,9 @@ class FragmentQuizType2 : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_quiz_type2, container, false)
+        val view =inflater.inflate(R.layout.fragment_quiz_type2, container, false)
+
+        return view
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -44,7 +50,7 @@ class FragmentQuizType2 : Fragment() {
         if (context is OnFragmentInteractionListener) {
             listener = context
         } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener2")
         }
     }
 

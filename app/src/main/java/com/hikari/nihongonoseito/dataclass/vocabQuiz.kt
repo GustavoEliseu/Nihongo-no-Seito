@@ -1,4 +1,6 @@
 package com.hikari.nihongonoseito.dataclass
 
-class vocabQuiz(val vocabId:Int, val nome:String) {
+import java.io.Serializable
+
+class vocabQuiz(val nome:String,val imagem:String):Serializable {
 }

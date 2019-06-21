@@ -67,8 +67,6 @@ public class FragmentVocab extends Fragment  implements myRecyclerAdapter.ItemCl
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_vocab, container, false);
 
-
-
         return view;
     }
 

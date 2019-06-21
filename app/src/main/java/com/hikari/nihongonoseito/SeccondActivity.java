@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hikari.nihongonoseito.Kana.KanaFragment;
 import com.hikari.nihongonoseito.dataclass.Kana;
@@ -24,7 +25,8 @@ import org.jetbrains.annotations.Nullable;
 
 public class SeccondActivity extends AbstractActivity implements KanaFragment.OnListFragmentInteractionListener,
         FragmentKanji.OnFragmentInteractionListener,  FragmentSobre.OnFragmentInteractionListener,
-FragmentPerfil.OnFragmentInteractionListener, FragmentVocab.OnListFragmentInteractionListener,FragmentQuiz.OnFragmentInteractionListener {
+FragmentPerfil.OnFragmentInteractionListener, FragmentVocab.OnListFragmentInteractionListener,FragmentQuiz.OnFragmentInteractionListener,
+FragmentQuizController.OnFragmentInteractionListener, FragmentQuizType2.OnFragmentInteractionListener{
     private TextView mTextMessage;
     final Fragment fragmentQuiz = new FragmentQuiz();
     final Fragment fragmentKana = new KanaFragment();
@@ -89,9 +91,6 @@ FragmentPerfil.OnFragmentInteractionListener, FragmentVocab.OnListFragmentIntera
         super.onStart();
     }
 
-    public void firstInit(){
-
-    }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -205,7 +204,8 @@ FragmentPerfil.OnFragmentInteractionListener, FragmentVocab.OnListFragmentIntera
         Bundle arguments = new Bundle();
         arguments.putInt("controleQuiz",tipoQuiz);
         meuQuiz.setArguments(arguments);
-        getSupportFragmentManager().beginTransaction().add(meuQuiz,"quizFrag").addToBackStack("quiz");
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_sec_screen,meuQuiz,"quizFrag").addToBackStack("quiz").commit();
+
         getSupportFragmentManager().executePendingTransactions();
     }
 }
