@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".FragmentQuizType3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/quizKana"
+            android:layout_width="130dp"
+            android:layout_height="85dp"
+            android:foregroundGravity="center"
+            android:text="Button"
+            app:cardCornerRadius="@dimen/nav_header_vertical_spacing">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Kanas"
+                android:textSize="18sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/quizVocab"
+            android:layout_width="130dp"
+            android:layout_height="85dp"
+            android:layout_marginTop="32dp"
+            android:foregroundGravity="center"
+            android:text="Button"
+            app:cardCornerRadius="@dimen/nav_header_vertical_spacing">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Vocabulário"
+                android:textSize="18sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/quizKanji"
+            android:layout_width="130dp"
+            android:layout_height="85dp"
+            android:layout_marginTop="32dp"
+            android:foregroundGravity="center"
+            android:text="Button"
+            app:cardCornerRadius="@dimen/nav_header_vertical_spacing">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Kanji"
+                android:textSize="18sp" />
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</FrameLayout>

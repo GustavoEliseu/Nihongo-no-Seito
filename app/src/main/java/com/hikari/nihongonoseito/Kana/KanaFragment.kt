@@ -75,7 +75,6 @@ class KanaFragment : androidx.fragment.app.Fragment(), SimpleAdapter.ItemClickLi
         var contador = 0
 
         numberOfItens = resources.getStringArray(R.array.hira_text).size;
-        Log.e("testeee:", numberOfItens.toString())
         sections.add(SectionedGridRecyclerViewAdapter.Section(0, "Basico"))
         sections.add(SectionedGridRecyclerViewAdapter.Section(55, "Váriaveis"))
         sections.add(SectionedGridRecyclerViewAdapter.Section(80, "Junções"))

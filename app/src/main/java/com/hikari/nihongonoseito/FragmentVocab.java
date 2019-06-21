@@ -19,7 +19,7 @@ import com.hikari.nihongonoseito.vocab.SectionsPagerAdapter;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class FragmentVocab extends Fragment  implements myRecyclerAd.ItemClickListener {
+public class FragmentVocab extends Fragment  implements myRecyclerAdapter.ItemClickListener {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";

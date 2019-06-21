@@ -2,8 +2,11 @@ package com.hikari.nihongonoseito;
 
 import android.net.Uri;
 import android.os.Bundle;
+import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.ndk.CrashlyticsNdk;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
@@ -14,12 +17,14 @@ import android.widget.TextView;
 import com.hikari.nihongonoseito.Kana.KanaFragment;
 import com.hikari.nihongonoseito.dataclass.Kana;
 
+import io.fabric.sdk.android.Fabric;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 
 public class SeccondActivity extends AbstractActivity implements KanaFragment.OnListFragmentInteractionListener,
         FragmentKanji.OnFragmentInteractionListener,  FragmentSobre.OnFragmentInteractionListener,
-FragmentPerfil.OnFragmentInteractionListener, FragmentVocab.OnListFragmentInteractionListener {
+FragmentPerfil.OnFragmentInteractionListener, FragmentVocab.OnListFragmentInteractionListener,FragmentQuiz.OnFragmentInteractionListener {
     private TextView mTextMessage;
     final Fragment fragmentSobre = new FragmentSobre();
     final Fragment fragmentKana = new KanaFragment();
@@ -42,6 +47,7 @@ FragmentPerfil.OnFragmentInteractionListener, FragmentVocab.OnListFragmentIntera
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics(), new CrashlyticsNdk());
         setContentView(R.layout.activity_seccond);
         navView = findViewById(R.id.nav_view);
         mTextMessage = findViewById(R.id.message);
@@ -125,11 +131,11 @@ FragmentPerfil.OnFragmentInteractionListener, FragmentVocab.OnListFragmentIntera
     };
     @Override
     public void onBackPressed(){
-        if(degraisDeTela==0){
+        if(getSupportFragmentManager().getFragments().size()<1){
             finish();
         }else{
             degraisDeTela--;
-            super.onBackPressed();
+            this.removeFragment();
         }
     }
 
@@ -191,5 +197,15 @@ FragmentPerfil.OnFragmentInteractionListener, FragmentVocab.OnListFragmentIntera
     @Override
     public void onListFragmentInteraction(@Nullable Kana item) {
 
+    }
+
+    @Override
+    public void onFragmentInteraction(@NotNull int tipoQuiz) {
+        Fragment meuQuiz = new FragmentQuizController();
+        Bundle arguments = new Bundle();
+        arguments.putInt("controleQuiz",tipoQuiz);
+        meuQuiz.setArguments(arguments);
+        getSupportFragmentManager().beginTransaction().add(meuQuiz,"quizFrag").addToBackStack("quiz");
+        getSupportFragmentManager().executePendingTransactions();
     }
 }

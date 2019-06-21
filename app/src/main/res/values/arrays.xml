@@ -1327,7 +1327,7 @@
     </string-array>
 
     <string-array name="vocabImgs">
-        <item>v_01_Comida</item>
+        <item>v_01_comida</item>
         <item>v_02_arroz</item>
         <item>v_03_pao</item>
         <item>v_04_cereal</item>

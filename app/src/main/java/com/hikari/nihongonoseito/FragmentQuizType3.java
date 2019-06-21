@@ -14,23 +14,18 @@ import android.widget.Toast;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link FragmentQuiz.OnFragmentInteractionListener} interface
+ * {@link FragmentQuizType3.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link FragmentQuiz#newInstance} factory method to
+ * Use the {@link FragmentQuizType3#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentQuiz extends Fragment implements View.OnClickListener{
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+public class FragmentQuizType3 extends Fragment implements View.OnClickListener{
 
-    // TODO: Rename and change types of parameters
     private CardView c1,c2,c3,c4;
 
     private OnFragmentInteractionListener mListener;
 
-    public FragmentQuiz() {
+    public FragmentQuizType3() {
         // Required empty public constructor
     }
 
@@ -43,8 +38,8 @@ public class FragmentQuiz extends Fragment implements View.OnClickListener{
      * @return A new instance of fragment FragmentQuiz.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentQuiz newInstance(String param1, String param2) {
-        FragmentQuiz fragment = new FragmentQuiz();
+    public static FragmentQuizType3 newInstance(String param1, String param2) {
+        FragmentQuizType3 fragment = new FragmentQuizType3();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -59,7 +54,7 @@ public class FragmentQuiz extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =inflater.inflate(R.layout.fragment_quiz_, container, false);
+        View v =inflater.inflate(R.layout.fragment_quiz, container, false);
         c1= v.findViewById(R.id.quizBtn1);
         c2= v.findViewById(R.id.quizBtn2);
         c3= v.findViewById(R.id.quizBtn3);

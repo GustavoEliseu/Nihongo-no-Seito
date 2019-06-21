@@ -10,13 +10,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class myRecyclerAd extends RecyclerView.Adapter<myRecyclerAd.ViewHolder> {
+public class myRecyclerAdapter extends RecyclerView.Adapter<myRecyclerAdapter.ViewHolder> {
     private ItemClickListener mClickListener;
     private String[] mData,mvVocabsImg, mDataTrad;
     private Context context;
     private LayoutInflater mInflater;
 
-    public myRecyclerAd(Context context,String data[], String[] vocabsImg,String[] mDataTrad){
+    public myRecyclerAdapter(Context context, String data[], String[] vocabsImg, String[] mDataTrad){
         this.mInflater = LayoutInflater.from(context);
         mData = data;
         this.mDataTrad=mDataTrad;
@@ -26,9 +26,9 @@ public class myRecyclerAd extends RecyclerView.Adapter<myRecyclerAd.ViewHolder> 
 
     @NonNull
     @Override
-    public myRecyclerAd.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public myRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = mInflater.inflate(R.layout.recycler_view_item, viewGroup,false);
-        return new ViewHolder(view);
+        return new ViewHolder(view, false);
     }
 
     @Override
@@ -36,6 +36,7 @@ public class myRecyclerAd extends RecyclerView.Adapter<myRecyclerAd.ViewHolder> 
         try{
         viewHolder.mTitleView.setText(mData[i]);
         viewHolder.vocabTraduz.setText(mDataTrad[i]);
+        //viewHolder.controleCor =
         viewHolder.imageVocab.setImageDrawable( context.getResources().getDrawable(context.getResources().getIdentifier(mvVocabsImg[i], "drawable", context.getPackageName())));
         //viewHolder.imageVocab.setImageDrawable(context.getResources().getDrawable(R.drawable.carne_img));
         viewHolder.imageMarcarVocab.setImageDrawable(context.getResources().getDrawable(R.drawable.ver_img));}
@@ -56,12 +57,14 @@ public class myRecyclerAd extends RecyclerView.Adapter<myRecyclerAd.ViewHolder> 
         public ImageView imageVocab,imageMarcarVocab;
         public boolean controleCor = true;
 
-        public ViewHolder(View v) {
+        public ViewHolder(View v, Boolean controleCor) {
             super(v);
+            this.controleCor=controleCor;
             mTitleView = v.findViewById(R.id.vocabTitulo);
             vocabTraduz = v.findViewById(R.id.vocabTraduz);
             imageVocab = v.findViewById(R.id.imageVocab);
             imageMarcarVocab = v.findViewById(R.id.imageMarcarVocab);
+            definirCor(controleCor);
             v.setOnClickListener(this);
             imageMarcarVocab.setOnClickListener(this);
 
@@ -69,7 +72,7 @@ public class myRecyclerAd extends RecyclerView.Adapter<myRecyclerAd.ViewHolder> 
 
         public void inverteCor(){
             this.controleCor = !controleCor;
-            if(controleCor==true){
+            if(controleCor){
                 mTitleView.setTextColor(Color.BLACK);
             } else{
                 mTitleView.setTextColor(Color.GRAY);
@@ -77,10 +80,18 @@ public class myRecyclerAd extends RecyclerView.Adapter<myRecyclerAd.ViewHolder> 
 
         }
 
+        public void definirCor(Boolean controleCor){
+            if(controleCor){
+                mTitleView.setTextColor(Color.BLACK);
+            } else{
+                mTitleView.setTextColor(Color.GRAY);
+            }
+        }
+
 
         @Override
         public void onClick(View v) {
-            if (mClickListener != null)
+            if (mClickListener != null )
                 if(v.getId()==imageMarcarVocab.getId()){//click no botão cancelar
                     inverteCor();
                     /*
