@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/img_quiz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="143dp"
+        android:layout_height="145dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/h_14_se" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/quizBtn1"
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Opcao 1"
+            android:text="sa"
             android:textSize="18sp" />
     </androidx.cardview.widget.CardView>
 
@@ -67,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Opcao 4"
+            android:text="su"
             android:textSize="18sp" />
     </androidx.cardview.widget.CardView>
 
@@ -90,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Opcao 3"
+            android:text="shi"
             android:textSize="18sp" />
     </androidx.cardview.widget.CardView>
 
@@ -112,10 +112,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Opcao 2"
+            android:text="se"
             android:textSize="18sp" />
     </androidx.cardview.widget.CardView>
-
 
 
     <ProgressBar
@@ -125,6 +124,7 @@
         android:layout_height="wrap_content"
         android:progress="@integer/progressBar"
         android:progressDrawable="@android:drawable/progress_horizontal"
+        android:progressTint="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

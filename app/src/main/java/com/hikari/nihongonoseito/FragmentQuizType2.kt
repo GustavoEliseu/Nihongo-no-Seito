@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.lorentzos.flingswipe.SwipeFlingAdapterView
 import kotlinx.android.synthetic.main.fragment_quiz_type2.view.*
 
 
@@ -24,12 +23,12 @@ class FragmentQuizType2 : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (arguments != null) {
+      /*  if (arguments != null) {
             perguntaTxt = arguments!!.getString(ARG_PARAM1)
             perguntaImg = arguments!!.getString(ARG_PARAM2)
             respostaBool = arguments!!.getBoolean(ARG_PARAM3)
 
-        }
+        }*/
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

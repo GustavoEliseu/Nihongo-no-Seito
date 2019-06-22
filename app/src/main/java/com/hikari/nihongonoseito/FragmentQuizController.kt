@@ -13,7 +13,6 @@ import android.widget.FrameLayout
 import com.hikari.nihongonoseito.Database.DBHelper
 import com.hikari.nihongonoseito.dataclass.vocabQuiz
 import kotlin.random.Random
-import com.lorentzos.flingswipe.SwipeFlingAdapterView
 import kotlinx.android.synthetic.main.fragment_quiz_controller.view.*
 
 
